@@ -37,7 +37,7 @@ export default function ContactSection() {
             className="p-3 transition-all duration-300 hover:scale-110 hover:text-[#E4405F]">
             <Instagram size={28} />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+          <a href="https://www.linkedin.com/in/aristide-gael-kouandja-kenfack-571693287/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
             className="p-3 transition-all duration-300 hover:scale-110 hover:text-[#0A66C2]">
             <Linkedin size={28} />
           </a>
