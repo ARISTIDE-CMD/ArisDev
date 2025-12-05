@@ -26,6 +26,7 @@ const skillsData: SkillCategory[] = [
       { name: "React / Next.js", level: 'Expert' },
       { name: "React Native", level: 'Avancé' },
       { name: "Laravel / PHP", level: 'Avancé' },
+      { name: "Spring / Java", level: 'Avancé' },
       { name: "HTML / CSS / Tailwind", level: 'Expert' },
       { name: "MySQL (Base de données)", level: 'Avancé' },
     ],
@@ -34,8 +35,9 @@ const skillsData: SkillCategory[] = [
     title: "Outils & Environnement",
     icon: <Wrench className="w-5 h-5" />,
     skills: [
-      { name: "GitHub / Git", level: 'Avancé' },
+      { name: "GitHub / GitLab", level: 'Avancé' },
       { name: "Postman (API Testing)", level: 'Avancé' },
+      { name: "Odoo/Jira/PowerBI", level: 'Intermédiaire' },
       { name: "VS Code", level: 'Expert' },
       { name: "Ubuntu / Linux", level: 'Intermédiaire' },
     ],
