@@ -32,8 +32,9 @@ export default function About() {
               <span className="text-yellow-400 font-semibold">
                 développement web et mobile
               </span>
-              , et je cherche à améliorer mes compétences en Next.js, React
-              Native, Tailwind CSS, et bien d&apos;autres encore.
+              , et je cherche à améliorer mes compétences en dans le développement d'architectures web complètes. 
+              Migrer des gros projets vers une architecture microservices est un de mes objectifs principaux.
+              Compléter celà par des compétences en DevOps pour automatiser les déploiements et la gestion des infrastructures.
             </p>
 
             <p className="text-lg md:text-xl leading-relaxed italic text-gray-400">
@@ -43,7 +44,7 @@ export default function About() {
 
             <button className="inline-flex items-center space-x-2 bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-bold py-3 px-8 rounded-xl transition duration-300 shadow-xl shadow-yellow-500/30 mt-6 transform hover:scale-[1.02]">
               <Download size={20} />
-              <span><a href="/file/CV.pdf">Télécharger mon CV</a></span>
+              <span><a href="/file/CV_Aristide gael_kouandja kenfack.pdf">Télécharger mon CV</a></span>
             </button>
           </div>
 
