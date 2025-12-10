@@ -24,7 +24,6 @@ const projectData: Project[] = [
     tags: ["React Native", "Laravel", "API REST", "MySQL", "Full Stack"],
     githubFrontend: "https://github.com/KM-Solutions-SARL/livraison-mobile",
     githubBackend: "https://github.com/KM-Solutions-SARL/livraison",
-    link: "https://www.figma.com/team_invite/redeem/67NKPVkoJIaSKZNJbIHLM1",
   },
   {
     icon: <Layout className="h-8 w-8 text-yellow-400" />,
@@ -39,9 +38,10 @@ const projectData: Project[] = [
     title: "Application de Travail Collaboratif",
     description:
       "Application web pour le travail d'équipe (partage de fichiers, messagerie et collaboration en ligne).",
-    tags: ["React", "Backend Custom", "Collaboration", "UI/UX"],
-    githubFrontend: "https://github.com/ARISTIDE-CMD/Club infos frontend.git",
-    githubBackend: "https://github.com/ARISTIDE-CMD/Club infos backend.git"
+      tags: ["React", "Backend Custom", "Collaboration", "UI/UX"],
+      githubFrontend: "https://github.com/ARISTIDE-CMD/Club infos frontend.git",
+      githubBackend: "https://github.com/ARISTIDE-CMD/Club infos backend.git",
+      link: "https://drive.google.com/file/d/1oC6NsyEMfauJqJcGxRScjh1Cr6VMaw6J/view?usp=sharing"
   },
 ];
 
