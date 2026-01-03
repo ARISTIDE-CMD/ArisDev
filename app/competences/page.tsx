@@ -82,7 +82,7 @@ const getLevelClasses = (level?: Skill['level']) => {
 // ✅ Composant principal
 export default function Skills() {
   return (
-    <div className="min-h-screen bg-slate-900 text-gray-200 py-20 px-6 md:px-12 overflow-hidden">
+    <div className="min-h-screen bg-slate-900 text-gray-200 py-2 px-6 md:px-12 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Titre */}
         <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-16 border-b-4 border-yellow-400 pb-2 inline-block animate-fadeInUp">

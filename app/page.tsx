@@ -56,7 +56,7 @@ export default function HeroSection() {
 
         {/* Image du Profil */}
         <div
-          className={`w-full md:w-1/2 flex justify-center md:justify-end transition-all duration-1000 ease-out ${
+          className={`w-full md:w-1/2 flex justify-center md:justify-end transition-all mb-5 duration-1000 ease-out ${
             isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-16"
           } transition-all duration-1000 delay-200`}
         >

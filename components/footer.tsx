@@ -3,7 +3,7 @@ import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
 export default function Footer() {
   return (
     // Utilisation d'un fond très sombre (slate-950) avec une bordure d'accent jaune
-    <footer className="bg-slate-950 text-gray-300 py-8 px-6 border-t border-yellow-400/20 shadow-inner shadow-slate-950/50">
+    <footer className="bg-slate-950 text-gray-300 py-2 px-6 border-t border-yellow-400/20 shadow-inner shadow-slate-950/50">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
 
         {/* Bloc 1 : Nom / identité */}
@@ -42,7 +42,7 @@ export default function Footer() {
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
               viewBox="0 0 24 24"
-              className="w-6 h-6"
+              className="w-6 h-6 bg-green-800 rounded-full"
             >
               <path d="M20.52 3.48a11.948 11.948 0 0 0-17 0C-1.18 9.14-.21 17.1 4.25 21.08L3 24l3.1-1.04A11.954 11.954 0 0 0 21 7.58a11.954 11.954 0 0 0-.48-4.1zM12 21.4a9.39 9.39 0 0 1-4.77-1.29l-.34-.2-2.84.95.93-2.86-.21-.33A9.41 9.41 0 0 1 2.6 12C2.62 7.03 6.94 2.7 12 2.7c2.52 0 4.9 1 6.7 2.8A9.4 9.4 0 0 1 21.4 12c-.01 5.06-4.34 9.39-9.4 9.4zm5.07-7.53c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.55.12-.16.24-.61.82-.75.99-.13.16-.25.18-.46.06-.21-.12-.89-.34-1.69-1-.63-.55-1.05-1.22-1.17-1.43-.12-.21-.02-.32.09-.44.09-.09.21-.25.31-.37.1-.12.13-.21.21-.36.08-.14.04-.27-.02-.38-.06-.11-.57-1.24-.79-1.69-.21-.44-.43-.37-.55-.38l-.47-.01c-.15 0-.39.06-.6.27-.21.21-.8.75-.8 1.83s.82 2.13.93 2.29c.11.16 1.57 2.34 3.82 3.29.54.23.95.36 1.28.47.54.16 1.01.14 1.39.08.42-.06 1.47-.59 1.68-1.19.21-.59.21-1.09.15-1.2-.06-.11-.21-.16-.46-.28z" />
             </svg>
