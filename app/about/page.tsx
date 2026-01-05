@@ -6,7 +6,7 @@ import React from "react";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-slate-900 text-gray-200 py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="min-h-screen bg-slate-900 text-gray-200 py-2 md:py-4 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Titre */}
         <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-12 border-b-4 border-yellow-400 pb-2 inline-block animate-fadeDown">
@@ -49,13 +49,13 @@ export default function About() {
           </div>
 
           {/* Image */}
-          <div className="flex justify-center md:justify-end p-4 order-first md:order-last animate-slideRight">
+          <div className="flex justify-center md:justify-end mb-25 order-first md:order-last animate-slideRight">
             <div className="relative w-full max-w-sm aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl border-4 border-yellow-400/50">
               <Image
-                src="/assets/images/1762381804185.jpg"
+                src="/human_id.png"
                 alt="Kouandja Kenfack - Profil"
                 layout="fill"
-                objectFit="cover"
+                // objectFit="cover"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent"></div>

@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Services from "../components/Services";
 // En environnement de rendu non-Next.js, 'next/image' doit être remplacé par 'img'
 // const Image = (props) => <img {...props} />; 
 
@@ -19,6 +20,7 @@ export default function HeroSection() {
 
 
   return (
+    <>
     <section className="relative w-full min-h-screen bg-slate-900 flex items-center justify-center overflow-hidden py-2">
       
       {/* 1. Arrière-plan Dynamique (effet de lumière/galaxie) */}
@@ -36,7 +38,7 @@ export default function HeroSection() {
         >
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
              Développeur en devenir <br/>
-             <span className="text-yellow-400">Passionné par le digital</span>.
+             <span className="text-yellow-400">Passionné par le digital</span>
           </h1>
           
           <p className="text-slate-300 text-lg md:text-xl mb-8 max-w-lg mx-auto md:mx-0">
@@ -95,5 +97,8 @@ export default function HeroSection() {
         }
       `}</style>
     </section>
+
+    <Services />
+    </>
   );
 }

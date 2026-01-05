@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Code } from 'lucide-react'; // icônes menu, fermer et code
+import Racine from "./racine";
 
 // Définition de l'interface pour les liens de navigation
 interface NavLink {
@@ -13,9 +14,10 @@ interface NavLink {
 
 const links: NavLink[] = [
     { href: "/", label: "Accueil" },
+    { href: "/services", label: "Services" },
     { href: "/about", label: "À propos" },
-    { href: "/myProjets", label: "Mes projets" },
-    { href: "/competences", label: "Compétences" },
+    // { href: "/myProjets", label: "Mes projets" },
+    // { href: "/competences", label: "Compétences" },
     { href: "/contact", label: "Contact" },
 ];
 
@@ -31,17 +33,17 @@ export default function Navbar() {
     return (
         // Rendre la barre de navigation sticky et appliquer le style premium sombre
         <nav className="sticky top-0 z-50 bg-slate-900 border-b border-yellow-400/20 shadow-xl shadow-slate-950/50">
-            <div className="container mx-auto px-6  flex items-center justify-between">
+            <div className="container mx-auto px-2  flex items-center justify-between">
                 
                 {/* Logo/Branding (Gauche) */}
                 <div className="text-left flex items-center gap-3">
                     {/* <Code className="text-yellow-400 h-8 w-8" /> */}
                     <Link href="/"  >
-                    <img src="/logo.png" alt="Logo" width={60} height={60} sizes="cover"
+                    <img src="/logofinal.png" alt="Logo" width={60} height={60} sizes="cover"
                     /></Link>
                     <div className="leading-none">
                         <h1 className="text-xl font-bold text-white tracking-wider">ArisDev</h1>
-                        <h3 className="text-sm font-medium text-slate-400">La rigueur au cœur du développement</h3>
+                        <h3 className="text-sm font-medium text-slate-400">Solutions digitales claires, utiles et orientées résultat</h3>
                     </div>
                 </div>
 
@@ -55,7 +57,7 @@ export default function Navbar() {
                 </button>
 
                 {/* Menu de navigation (Desktop) */}
-                <ul className="hidden md:flex md:space-x-8 text-sm font-semibold">
+                <ul className="hidden md:flex md:space-x-6 text-sm font-semibold">
                     {links.map((link) => {
                         const isActive = pathname === link.href;
                         return (
@@ -84,6 +86,7 @@ export default function Navbar() {
                     })}
                 </ul>
             </div>
+            {/* <Racine/> */}
 
             {/* Menu Mobile (Full Overlay) */}
             <div 
