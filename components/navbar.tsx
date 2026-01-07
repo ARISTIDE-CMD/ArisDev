@@ -31,7 +31,7 @@ export default function Navbar() {
 
     return (
         // Rendre la barre de navigation sticky et appliquer le style premium sombre
-        <nav className="sticky top-0 z-50 bg-slate-900 border-b  shadow-xl shadow-slate-950/50 -py-3">
+        <nav className="sticky top-0 z-50 bg-slate-900   shadow-xl shadow-slate-950/50 -py-3">
             <div className="container mx-auto px-2  flex items-center justify-between">
                 
                 {/* Logo/Branding (Gauche) */}

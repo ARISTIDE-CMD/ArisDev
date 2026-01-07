@@ -3,6 +3,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const services = [
   {
@@ -55,6 +56,13 @@ const services = [
 //   },
 ];
 
+// const categories = [
+//   { title: 'Développement', desc: 'Web, mobile, design', href: '/services/developpement', emoji: '💻' },
+//   { title: 'Produits digitaux', desc: 'Produits prêts à l’emploi et templates', href: '/services/produitsdigitaux', emoji: '📦' },
+//   { title: 'Maintenance', desc: 'Support, mises à jour et monitoring', href: '/services/maintenance', emoji: '🛠️' },
+//   { title: 'Formations', desc: 'Ateliers et formations sur-mesure', href: '/services/formations', emoji: '🎓' },
+// ];
+
 export default function Services() {
   const ref = React.useRef<HTMLElement | null>(null);
   const [inView, setInView] = React.useState(false);
@@ -90,6 +98,20 @@ export default function Services() {
     Des solutions claires et structurées pour transformer vos idées
     en produits numériques solides.
   </p>
+
+  {/* <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    {categories.map((cat) => (
+      <Link key={cat.title} href={cat.href} className="rounded-lg bg-slate-800 p-4 border border-slate-700/40 hover:bg-slate-700 transition">
+        <div className="flex items-start gap-3">
+          <div className="text-2xl">{cat.emoji}</div>
+          <div>
+            <h3 className="text-white font-semibold">{cat.title}</h3>
+            <p className="text-slate-300 text-sm mt-1">{cat.desc}</p>
+          </div>
+        </div>
+      </Link>
+    ))}
+  </div> */}
 </div>
 
 

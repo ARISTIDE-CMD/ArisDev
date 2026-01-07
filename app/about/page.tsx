@@ -6,65 +6,76 @@ import React from "react";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-slate-900 text-gray-200 py-2 md:py-4 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="min-h-screen bg-slate-900 text-slate-200 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Titre */}
-        <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-12 border-b-4 border-yellow-400 pb-2 inline-block animate-fadeDown">
-          À Propos
-        </h1>
+        <header className="mb-16">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white border-b-4 border-yellow-400 pb-3 inline-block animate-fadeDown">
+            À propos d’ArisDev
+          </h1>
+        </header>
 
-        {/* Conteneur principal */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
+        {/* Contenu */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-14 lg:gap-24 items-center">
+          
           {/* Texte */}
-          <div className="space-y-6 lg:space-y-8 animate-slideLeft">
+          <div className="space-y-8 animate-slideLeft">
             <p className="text-lg md:text-xl leading-relaxed">
-              Je m&apos;appelle{" "}
-              <span className="text-yellow-400 font-bold">Kouandja</span>,
-              passionné par la{" "}
+              <span className="text-yellow-400 font-semibold">ArisDev</span> est
+              une entité orientée vers la{" "}
               <span className="text-yellow-400 font-semibold">
-                création de sites web modernes et interactifs
+                conception de solutions numériques solides
               </span>
-              .
+              , modernes et évolutives.
             </p>
 
             <p className="text-lg md:text-xl leading-relaxed">
-              Je suis actuellement étudiant en{" "}
-              <span className="text-yellow-400 font-semibold">
-                développement web et mobile
-              </span>
-              , et je cherche à améliorer mes compétences en dans le développement d'architectures web complètes. 
-              Migrer des gros projets vers une architecture microservices est un de mes objectifs principaux.
-              Compléter celà par des compétences en DevOps pour automatiser les déploiements et la gestion des infrastructures.
+              L’approche repose sur une vision claire de l’architecture
+              logicielle, allant du développement d’applications web et
+              mobiles à la structuration de systèmes complexes, capables
+              de supporter la croissance et l’évolution des produits
+              numériques.
             </p>
 
-            <p className="text-lg md:text-xl leading-relaxed italic text-gray-400">
-              J&apos;adore transformer mes idées en projets concrets <br className="hidden sm:inline" />{" "}
-              et expérimenter avec les nouvelles technologies.
+            <p className="text-lg md:text-xl leading-relaxed">
+              ArisDev accorde une importance particulière à la qualité du
+              code, à la maintenabilité et à l’automatisation des
+              déploiements, en intégrant progressivement des pratiques
+              DevOps pour garantir fiabilité, performance et continuité
+              des services.
             </p>
 
-            <button className="inline-flex items-center space-x-2 bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-bold py-3 px-8 rounded-xl transition duration-300 shadow-xl shadow-yellow-500/30 mt-6 transform hover:scale-[1.02]">
+            <p className="text-lg md:text-xl italic text-slate-400">
+              Construire aujourd’hui des systèmes pensés pour durer
+              demain.
+            </p>
+
+            <a
+              href="/file/Presentation_ArisDev.pdf"
+              className="inline-flex items-center gap-3 bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-semibold py-3 px-8 rounded-xl transition shadow-xl shadow-yellow-500/30 hover:scale-[1.02]"
+            >
               <Download size={20} />
-              <span><a href="/file/CV_Aristide gael_kouandja kenfack.pdf">Télécharger mon CV</a></span>
-            </button>
+              <span>Présentation ArisDev</span>
+            </a>
           </div>
 
-          {/* Image */}
-          <div className="flex justify-center md:justify-end mb-25 order-first md:order-last animate-slideRight">
-            <div className="relative w-full max-w-sm aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl border-4 border-yellow-400/50">
+          {/* Image / Illustration */}
+          <div className="flex justify-center md:justify-end animate-slideRight">
+            <div className="relative w-full max-w-sm aspect-[4/5] rounded-3xl overflow-hidden border border-yellow-400/40 shadow-2xl">
               <Image
                 src="/manboite.png"
-                alt="Kouandja Kenfack - Profil"
-                layout="fill"
-                objectFit="cover"
+                alt="Illustration ArisDev"
+                fill
+                className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent" />
             </div>
           </div>
         </div>
       </div>
 
-      {/* 🔥 Définition des animations en inline Tailwind */}
+      {/* Animations */}
       <style jsx>{`
         @keyframes slideLeft {
           from {
@@ -111,6 +122,6 @@ export default function About() {
           animation: fadeDown 0.8s ease-out both;
         }
       `}</style>
-    </div>
+    </section>
   );
 }

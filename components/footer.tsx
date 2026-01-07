@@ -37,10 +37,10 @@ export default function Footer() {
       <div className="relative z-20 max-w-6xl mx-auto py-10 px-3 md:pl-6 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Bloc identité */}
         <div>
-          <h2 className="text-2xl font-bold text-white">Aristide Gael</h2>
+          <h2 className="text-2xl font-bold text-white">ArisDev</h2>
           <p className="mt-1 text-yellow-400 font-medium">Développeur & architecte du numérique</p>
           <p className="mt-3 text-sm text-gray-400">
-            Du code à l’architecture, je transforme des idées en solutions web
+            Du code à l’architecture, nous transformons des idées en solutions web
             claires, fiables et performantes.
           </p>
         </div>
@@ -124,14 +124,14 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-slate-800">
+      {/* <div className="hidden border-t border-slate-800">
         <div className="max-w-6xl mx-auto mb-3 px-1 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
           <p className="mt-4 text-xs text-gray-500">© {new Date().getFullYear()} ArisDev. Solutions digitales claires, utiles et orientées résultat.</p>
           <div className="mt-3 md:mt-0">
             <a href="/file" className="text-gray-400 hover:text-yellow-400 transition">Mentions légales</a>
           </div>
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 }
