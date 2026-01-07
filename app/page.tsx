@@ -73,7 +73,7 @@ export default function HeroSection() {
 
             <video
               src="/video.mp4"
-              poster="/assets/images/c9af431cdb9322e4ff4a43af70db96ae.jpg"
+              // poster="/logofinal.png"
               className="relative z-10 w-full h-full object-cover rounded-full border-4 border-slate-700 shadow-2xl shadow-yellow-500/20"
               autoPlay
               muted

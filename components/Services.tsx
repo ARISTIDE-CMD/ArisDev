@@ -10,25 +10,29 @@ const services = [
     title: "Création d'applications pour entreprises et startups",
     subtitle: "Je conçois des applications qui permettent aux entreprises de gérer leurs activités, leurs clients et leurs services en ligne, de manière simple et efficace.",
     imageSrc: "/Gérer des projets complexes avec Microsoft Planner.jpeg",
-    imageAlt: "Équipe travaillant sur une application"
+    imageAlt: "Équipe travaillant sur une application",
+    objectPosition: 'center'
   },
   {
     title: "Développement d'applications mobiles",
     subtitle: "Je crée des applications mobiles modernes pour Android et iPhone afin de rapprocher votre entreprise de vos clients.",
-    imageSrc: "/Cheerful black man standing by huge cellphone, mockup Stock Photo.jpeg",
-    imageAlt: "Maquette application mobile sur smartphone"
+    imageSrc: "/Delivery/applicationmobile.jpg",
+    imageAlt: "Maquette application mobile sur smartphone",
+    objectPosition: 'center 20%'
   },
   {
     title: "Création de plateformes web professionnelles",
     subtitle: "Je développe des sites et plateformes web rapides, sécurisés et pensés pour convertir vos visiteurs en clients.",
     imageSrc: "/app_stock.jpeg",
-    imageAlt: "Interface d'une plateforme web"
+    imageAlt: "Interface d'une plateforme web",
+    objectPosition: 'center'
   },
   {
     title: "Automatisation et digitalisation des processus",
     subtitle: "J'aide les entreprises à automatiser des tâches répétitives pour réduire les erreurs et gagner du temps.",
     imageSrc: "/automatisation.png",
-    imageAlt: "Tableau de gestion de projet et automatisation"
+    imageAlt: "Tableau de gestion de projet et automatisation",
+    objectPosition: 'center'
   },
 //   {
 //     title: "Amélioration de la performance et de la rapidité",
@@ -40,13 +44,15 @@ const services = [
     title: "Sécurisation des applications et des données",
     subtitle: "Je mets en place des solutions pour protéger les données et sécuriser l'accès aux plateformes numériques.",
     imageSrc: "/RGPD _ Mettez en place vos dispositifs de protection et de sécurisation des données !.jpeg",
-    imageAlt: "Icône de sécurité et fichier sécurisé"
+    imageAlt: "Icône de sécurité et fichier sécurisé",
+    objectPosition: 'center 40%'
   },
   {
     title: "Accompagnement digital & conseil",
     subtitle: "J'accompagne les porteurs de projets et les entreprises dans leurs choix digitaux pour construire des solutions efficaces et durables.",
     imageSrc: "/accompagnement.png",
-    imageAlt: "Réunion de conseil et stratégie digitale"
+    imageAlt: "Réunion de conseil et stratégie digitale",
+    objectPosition: 'center'
   },
 //   {
 //     title: "Portfolios & sites professionnels",
@@ -127,9 +133,13 @@ export default function Services() {
                 style={{ animationDelay: inView ? `${index * 120}ms` : '0ms' }}
                 className={`service-card group bg-slate-900 p-4 rounded-xl border border-slate-700/40 shadow-lg hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-yellow-400/30 ${inView ? 'is-visible' : ''}`}
               >
-                <div className="relative h-40 mb-4 overflow-hidden rounded-md bg-slate-800">
-                  {/* Utilisation de next/image pour mieux gérer les images statiques */}
-                  <Image src={s.imageSrc} alt={s.imageAlt} fill className="object-cover transition-transform duration-500 group-hover:scale-105 group-focus:scale-105 transform" />
+                <div className="relative h-40 md:h-48 lg:h-56 mb-4 overflow-hidden rounded-md bg-slate-800">
+                  {/* Utilisation de next/image avec centrage et zoom limité pour éviter le débordement */}
+                  <Image
+                    src={s.imageSrc}
+                    alt={s.imageAlt}
+                    fill                    style={{ objectPosition: s.objectPosition || 'center' }}                    className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03] group-focus:scale-[1.03] transform-gpu will-change-transform"
+                  />
                 </div>
 
                 <div className="flex items-start gap-4">
