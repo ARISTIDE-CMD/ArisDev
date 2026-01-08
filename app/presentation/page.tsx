@@ -1,3 +1,5 @@
+"use client";
+
 import { Code, Laptop, Wrench, BookOpen, Users, Target, Zap, Shield, CheckCircle2, Sparkles } from "lucide-react";
 
 export default function AboutSection() {
@@ -76,7 +78,7 @@ export default function AboutSection() {
       </div>
 
       {/* Hero Section */}
-      <div className="relative max-w-7xl mx-auto px-6 py-20">
+      <div className="relative max-w-7xl mx-auto px-6 py-20 enter-fade">
         <div className="text-center mb-20">
           <div className="inline-block mb-6">
             <span className="text-yellow-400 font-semibold text-sm tracking-wider uppercase bg-yellow-400/10 px-4 py-2 rounded-full border border-yellow-400/20">
@@ -319,6 +321,27 @@ export default function AboutSection() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .enter-fade {
+          opacity: 0;
+          transform: translateY(8px);
+          animation: fadeUp 1000ms cubic-bezier(.22,.9,.19,1) forwards;
+        }
+
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(28px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .enter-fade {
+            animation: none;
+            opacity: 1;
+            transform: none;
+          }
+        }
+      `}</style>
     </section>
   );
 }
