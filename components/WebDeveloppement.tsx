@@ -1,6 +1,8 @@
 "use client";
 
 import Link from 'next/link';
+import { FaWhatsapp } from "react-icons/fa";
+
 
 export default function WebPage() {
   return (
@@ -89,12 +91,10 @@ export default function WebPage() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-green-500 text-white font-semibold hover:bg-green-600 transition"
                     >
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                        <path d="M21 11.5C21 16.194 16.97 20 12 20c-1.45 0-2.82-.33-4.03-.93L4 20l1.95-3.02C5 15.65 4 13.9 4 12.01 4 7.31 8.03 4 12 4s9 3.31 9 7.5z" stroke="currentColor" strokeWidth="0" fill="white" />
-                        <path d="M15.5 14.2c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15s-.78.97-.96 1.17c-.18.2-.36.22-.67.07-.3-.15-1.13-.42-2.15-1.33-.8-.72-1.34-1.61-1.49-1.91-.15-.3-.02-.46.13-.61.14-.14.3-.36.45-.54.15-.18.2-.3.3-.5.1-.2 0-.37-.02-.52-.02-.15-.68-1.63-.93-2.24-.25-.61-.5-.53-.68-.54-.18-.02-.39-.02-.6-.02-.2 0-.52.07-.79.37-.27.3-1.03 1.01-1.03 2.46 0 1.45 1.05 2.86 1.2 3.05.15.2 2.08 3.23 5.04 4.52 2.96 1.29 2.96.86 3.5.81.54-.05 1.77-.72 2.02-1.41.25-.7.25-1.3.18-1.42-.07-.12-.27-.2-.57-.35z" fill="#25D366" />
-                      </svg>
+                      <FaWhatsapp className="w-5 h-5" />
                       WhatsApp
                     </a>
+
 
                     <Link href={service.href} className="text-sm inline-flex items-center gap-2 text-yellow-400 font-semibold hover:underline">
                       Contactez-nous →

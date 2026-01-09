@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Services from "../components/Services";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,7 +15,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="relative w-full min-h-screen bg-slate-900 flex items-center overflow-hidden">
+      <section className="relative w-full min-h-screen bg-slate-900 flex items-center overflow-hidden font-ubuntu">
         {/* Background lights */}
         <div className="pointer-events-none absolute -top-22 -right-32 w-[28rem] h-[28rem] bg-indigo-500/30 rounded-full blur-3xl animate-blob" />
         <div className="pointer-events-none absolute -bottom-32 -left-32 w-[28rem] h-[28rem] bg-yellow-400/30 rounded-full blur-3xl animate-blob animation-delay-2000" />
@@ -83,7 +84,7 @@ export default function HeroSection() {
               aria-hidden="true"
             />
           </div>
-
+              <FloatingWhatsApp/>
         </div>
 
         {/* Animations */}

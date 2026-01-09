@@ -135,7 +135,7 @@ export default function ServicesPage() {
                                 <div className="flex justify-end">
                                     <Link 
                                         href={cat.href} 
-                                        className="inline-flex items-center gap-2 bg-yellow-400 text-slate-900 font-bold px-5 py-2.5 rounded-xl shadow-lg hover:bg-yellow-300 hover:shadow-yellow-400/50 transition-all hover:gap-3"
+                                        className="inline-flex items-center gap-2 bg-yellow-400 text-slate-900 font-bold px-4 py-2 rounded-xl shadow-lg hover:bg-yellow-300 hover:shadow-yellow-400/50 transition-all hover:gap-3"
                                     >
                                         Voir
                                         <span className="text-lg">+</span>
@@ -150,9 +150,9 @@ export default function ServicesPage() {
                 <section className="text-center mt-16 animate-fade-in">
                     <Link 
                         href="/contact" 
-                        className="inline-block cta-animate bg-yellow-400 text-slate-900 font-extrabold text-lg px-10 py-4 rounded-lg shadow-2xl hover:bg-yellow-300 hover:shadow-yellow-400/50 transition-all hover:-translate-y-1"
+                        className="inline-block cta-animate bg-yellow-400 text-slate-900 font-extrabold text-lg text-white px-10 py-3 rounded-lg shadow-2xl hover:bg-yellow-300 hover:shadow-yellow-400/50 transition-all hover:-translate-y-1"
                     >
-                        Discutons de votre projet
+                       Décrivez-nous votre besoin
                     </Link>
                 </section>
             </main>

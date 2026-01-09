@@ -68,3 +68,15 @@ body {
     transition: none !important;
   }
 }
+
+@font-face {
+  font-family: "ArisDev";
+  src: url("/font/ArisFont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  font-family: "ArisDev", system-ui, sans-serif;
+}

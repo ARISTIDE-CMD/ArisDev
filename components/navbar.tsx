@@ -15,7 +15,7 @@ const links: NavLink[] = [
     { href: "/", label: "Accueil" },
     { href: "/services", label: "Services" },
     { href: "/about", label: "À propos" },
-    { href: "/presentation", label: "Présentations" },
+    { href: "/presentation", label: "FAQ" },
     // { href: "/competences", label: "Compétences" },
     { href: "/contact", label: "Contact" },
 ];
