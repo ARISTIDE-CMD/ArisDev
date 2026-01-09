@@ -21,7 +21,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-900" />
 
         {/* Content */}
-        <div className="relative z-10 container mx-auto px-6 py-28  md:pt-5 md:b-5 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div className="relative z-10 container mx-auto px-6 py-28  md:pt-3 md:b-5 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
 
           {/* Text */}
           <div
@@ -64,7 +64,7 @@ export default function HeroSection() {
           </div>
 
           {/* Image */}
-          <div className="relative w-72 h-72 md:w-96 md:h-96">
+          <div className="relative w-72 h-72 md:w-96 md:h-96 md:ml-5">
             {/* Onde jaune frappante */}
             <div className="absolute inset-0 rounded-full bg-yellow-400/40 blur-2xl animate-yellow-strike" />
 

@@ -4,19 +4,12 @@ import Link from "next/link";
 import { useState, FormEvent, } from "react";
 import { useForm } from "@formspree/react";
 import { Facebook, Instagram, Linkedin, Mail, Github, Youtube, MessageCircle } from "lucide-react";
+import Abonner from "./Abonner";
 
 
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [state, handleSubmit] = useForm("xyzbrllo");
-  // function handleSubscribe(e: FormEvent) {
-  //   e.preventDefault();
-  //   if (!email) return;
-  //   window.location.href = `mailto:aristidegaelkouandjakenfack@gmail.com?subject=Inscription%20newsletter&body=Veuillez%20m'inscrire%20à%20la%20newsletter%20(${encodeURIComponent(
-  //     email
-  //   )})`;
-  //   setEmail("");
-  // }
 
   return (
     <footer className="relative overflow-hidden bg-slate-950 text-gray-300">
@@ -34,7 +27,7 @@ export default function Footer() {
       {/* Gradient pour améliorer lisibilité du texte */}
       <div aria-hidden="true" className="hidden md:block absolute inset-y-0 left-0 w-2/5 bg-gradient-to-r from-slate-950/90 to-transparent z-10 pointer-events-none" />
 
-      <div className="relative z-20 max-w-6xl mx-auto py-10 px-3 md:pl-1 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="relative z-20 max-w-6xl mx-auto py-7 px-3 md:pl-1 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Bloc identité */}
         <div>
           <h2 className="text-2xl font-bold text-white">Aris<span className="text-yellow-400">Dev</span></h2>
@@ -113,25 +106,9 @@ export default function Footer() {
             </a>
           </div>
 
-          <form onSubmit={handleSubmit} className="mt-6">
-            <label htmlFor="newsletter" className="sr-only">Adresse e-mail</label>
-            <div className="flex items-center gap-2">
-              <input id="newsletter" type="email" placeholder="Votre e-mail" className="w-full rounded-md bg-slate-900 border border-slate-800 px-3 py-2 text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400" required />
-              <button type="submit" className="inline-flex items-center gap-2 bg-yellow-400 text-slate-950 px-3 py-2 rounded-md text-sm font-medium hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-yellow-400">S'abonner</button>
-            </div>
-            <p className="mt-2 text-xs text-gray-500">Pas de spam — désabonnement en un clic.</p>
-          </form>
+          <Abonner />
         </div>
       </div>
-
-      {/* <div className="hidden border-t border-slate-800">
-        <div className="max-w-6xl mx-auto mb-3 px-1 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
-          <p className="mt-4 text-xs text-gray-500">© {new Date().getFullYear()} ArisDev. Solutions digitales claires, utiles et orientées résultat.</p>
-          <div className="mt-3 md:mt-0">
-            <a href="/file" className="text-gray-400 hover:text-yellow-400 transition">Mentions légales</a>
-          </div>
-        </div>
-      </div> */}
     </footer>
   );
 }
