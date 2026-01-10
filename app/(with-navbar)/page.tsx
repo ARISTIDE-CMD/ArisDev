@@ -19,10 +19,17 @@ export default function HeroSection() {
     <>
       <section className="relative w-full min-h-screen bg-slate-900 flex items-center overflow-hidden font-ubuntu">
         {/* Background lights - Gardés car ils donnent un aspect premium */}
-        <div className="pointer-events-none absolute -top-22 -right-32 w-[28rem] h-[28rem] bg-indigo-500/30 rounded-full blur-3xl animate-blob" />
+        {/* <div className="pointer-events-none absolute -top-22 -right-32 w-[28rem] h-[28rem] bg-indigo-500/30 rounded-full blur-3xl animate-blob" />
         <div className="pointer-events-none absolute -bottom-32 -left-32 w-[28rem] h-[28rem] bg-yellow-400/30 rounded-full blur-3xl animate-blob animation-delay-2000" />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-900" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-900" /> */}
 
+<div
+          className="absolute inset-0 bg-cover bg-center z-0 bg-fixed"
+          style={{ backgroundImage: "url('/back.jpeg')" }}
+        />
+
+        {/* Overlay sombre pour contraste texte */}
+        <div className="absolute inset-0 bg-slate-900/80 z-0" />
         <div className="relative z-10 container mx-auto px-6 py-20 md:pt-5 md:b-5 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
 
           {/* Text - Optimisé Marketing */}
