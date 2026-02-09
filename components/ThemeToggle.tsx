@@ -3,26 +3,46 @@
 import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
 
+const THEME_STORAGE_KEY = "arisdev-theme";
+
+const getInitialTheme = () => {
+    if (typeof window === "undefined") {
+        return false;
+    }
+
+    const stored = localStorage.getItem(THEME_STORAGE_KEY);
+    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return stored ? stored === "dark" : prefersDark;
+};
+
+const applyTheme = (isDark: boolean) => {
+    document.documentElement.classList.toggle("theme-dark", isDark);
+    document.documentElement.classList.toggle("theme-light", !isDark);
+    localStorage.setItem(THEME_STORAGE_KEY, isDark ? "dark" : "light");
+    window.dispatchEvent(new CustomEvent("arisdev-theme-change", { detail: isDark }));
+};
+
 export default function ThemeToggle() {
-    const [isDark, setIsDark] = useState(false);
+    const [isDark, setIsDark] = useState(getInitialTheme);
 
     useEffect(() => {
-        // Initial theme from localStorage or prefers-color-scheme
-        const stored = typeof window !== "undefined" ? localStorage.getItem("arisdev-theme") : null;
-        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const nextIsDark = stored ? stored === "dark" : prefersDark;
+        applyTheme(isDark);
+    }, [isDark]);
 
-        setIsDark(nextIsDark);
-        document.documentElement.classList.remove("theme-dark", "theme-light");
-        document.documentElement.classList.add(nextIsDark ? "theme-dark" : "theme-light");
+    useEffect(() => {
+        const onThemeChange = (event: Event) => {
+            const customEvent = event as CustomEvent<boolean>;
+            if (typeof customEvent.detail === "boolean") {
+                setIsDark(customEvent.detail);
+            }
+        };
+
+        window.addEventListener("arisdev-theme-change", onThemeChange);
+        return () => window.removeEventListener("arisdev-theme-change", onThemeChange);
     }, []);
 
     const toggle = () => {
-        const next = !isDark;
-        setIsDark(next);
-        document.documentElement.classList.toggle("theme-dark", next);
-        document.documentElement.classList.toggle("theme-light", !next);
-        localStorage.setItem("arisdev-theme", next ? "dark" : "light");
+        setIsDark((previousValue) => !previousValue);
     };
 
     return (
