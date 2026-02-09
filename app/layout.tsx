@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="fr">
       {/* Scripts déplacés hors de <head> pour éviter les whitespace text nodes */}
       {/* ✅ Flex column pour coller le footer en bas */}
-      <body className="flex flex-col min-h-screen bg-gray-50">
+      <body className="flex flex-col min-h-screen bg-[var(--background)] text-[var(--foreground)]">
         {/* Navbar reste en haut */}
         <Navbar />
         <main className="flex-grow">{children}</main>

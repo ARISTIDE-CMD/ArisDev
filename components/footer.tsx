@@ -10,8 +10,8 @@ export default function Footer() {
   const [showWhatsapp, setShowWhatsapp] = useState(true);
 
   return (
-    <footer className="relative bg-slate-950 text-gray-300 overflow-hidden">
-      
+    <footer className="relative bg-gradient-to-t from-slate-950 to-slate-900 text-gray-300 overflow-hidden">
+
       {/* Dégradé subtil en haut */}
       <div
         aria-hidden="true"
@@ -22,11 +22,12 @@ export default function Footer() {
       {/* Décor visuel */}
       <div
         aria-hidden="true"
-        className="hidden md:block absolute inset-y-0 left-0 w-2/5 blur-xl pointer-events-none opacity-100 spin-slow"
+        className="hidden md:block absolute inset-y-0 left-0 w-2/5 pointer-events-none opacity-20 spin-slow"
         style={{
           backgroundImage: "url('/logofinal.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
+          mixBlendMode: "multiply",
         }}
       />
       <div
@@ -36,7 +37,7 @@ export default function Footer() {
 
       {/* Contenu */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-10 grid gap-10 md:grid-cols-3">
-        
+
         {/* Identité */}
         <section>
           <h2 className="text-2xl font-bold text-white">
@@ -65,7 +66,7 @@ export default function Footer() {
               ["Contact", "/contact"],
             ].map(([label, href]) => (
               <li key={href}>
-                <Link href={href} className="hover:text-yellow-400 transition">
+                <Link href={href} className="hover:text-yellow-400 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 rounded">
                   {label}
                 </Link>
               </li>
@@ -91,20 +92,21 @@ export default function Footer() {
           {/* Réseaux sociaux */}
           <div className="mt-5 flex gap-3">
             {[
-              { href: "https://www.facebook.com/share/1AitQnWX1n/", icon: FaFacebookF, color: "#1877F2" },
-              { href: "https://instagram.com", icon: FaInstagram, color: "#E4405F" },
-              { href: "https://www.linkedin.com/in/aristide-gael-kouandja-kenfack-571693287/", icon: FaLinkedinIn, color: "#0A66C2" },
-              { href: "https://www.youtube.com/@ArisDev-n2m", icon: FaYoutube, color: "#FF0000" },
-              { href: "https://wa.me/237680585671", icon: FaWhatsapp, color: "#25D366" },
-            ].map(({ href, icon: Icon, color }) => (
+              { href: "https://www.facebook.com/share/1AitQnWX1n/", icon: FaFacebookF, label: "Facebook", color: "#1877F2" },
+              { href: "https://instagram.com", icon: FaInstagram, label: "Instagram", color: "#E4405F" },
+              { href: "https://www.linkedin.com/in/aristide-gael-kouandja-kenfack-571693287/", icon: FaLinkedinIn, label: "LinkedIn", color: "#0A66C2" },
+              { href: "https://www.youtube.com/@ArisDev-n2m", icon: FaYoutube, label: "YouTube", color: "#FF0000" },
+              { href: "https://wa.me/237680585671", icon: FaWhatsapp, label: "WhatsApp", color: "#25D366" },
+            ].map(({ href, icon: Icon, label, color }) => (
               <a
                 key={href}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                title={href}
-                className={`p-2 rounded transition-transform duration-200 hover:scale-125 hover:shadow-lg`}
-                style={{ color }}
+                aria-label={label}
+                title={label}
+                className={`p-2 rounded-full transition-transform duration-200 hover:scale-110 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2`}
+                style={{ color, background: 'transparent' }}
               >
                 <Icon size={18} />
               </a>
@@ -119,14 +121,20 @@ export default function Footer() {
       </div>
 
       {/* Bas du footer */}
-      <div className="border-t border-slate-800 py-4 text-center text-xs text-gray-500 relative">
-        © {new Date().getFullYear()} ArisDev — Tous droits réservés
-        <div
-          className="mt-4 inline-flex items-center gap-2 rounded-full
-                     px-3 py-1.5 text-xs text-gray-300 backdrop-blur-sm mx-auto"
-        >
-          <MapPin size={13} className="text-yellow-400" />
-          <span>Douala, Cameroun</span>
+      <div className="border-t border-slate-800 py-4 text-xs text-gray-400 relative">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="text-center sm:text-left">
+            © {new Date().getFullYear()} ArisDev — Tous droits réservés
+          </div>
+          <div className="mt-0">
+            <div
+              className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs text-gray-200 bg-slate-800/40 backdrop-blur-sm"
+              role="note"
+            >
+              <MapPin size={13} className="text-yellow-400" />
+              <span>Douala, Cameroun</span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
