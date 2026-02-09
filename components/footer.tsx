@@ -10,13 +10,13 @@ export default function Footer() {
   const [showWhatsapp, setShowWhatsapp] = useState(true);
 
   return (
-    <footer className="relative bg-gradient-to-t from-slate-950 to-slate-900 text-gray-300 overflow-hidden">
+    <footer className="theme-surface relative theme-text-secondary overflow-hidden transition-colors duration-200">
 
       {/* Dégradé subtil en haut */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 h-32 
-                   bg-gradient-to-b from-transparent via-slate-950/70 to-slate-950 z-0"
+                   bg-gradient-to-b from-transparent via-slate-900/40 to-transparent z-0"
       />
 
       {/* Décor visuel */}
@@ -32,7 +32,7 @@ export default function Footer() {
       />
       <div
         aria-hidden="true"
-        className="hidden md:block absolute inset-y-0 left-0 w-2/5 bg-gradient-to-r from-slate-950/95 to-transparent"
+        className="hidden md:block absolute inset-y-0 left-0 w-2/5 bg-gradient-to-r from-slate-900/50 to-transparent"
       />
 
       {/* Contenu */}
@@ -40,13 +40,13 @@ export default function Footer() {
 
         {/* Identité */}
         <section>
-          <h2 className="text-2xl font-bold text-white">
+          <h2 className="theme-text-primary text-2xl font-bold transition-colors duration-200">
             Aris<span className="text-yellow-400">Dev</span>
           </h2>
           <p className="mt-1 text-yellow-400 text-sm font-medium">
             Développeur & architecte du numérique
           </p>
-          <p className="mt-4 text-sm text-gray-400 leading-relaxed">
+          <p className="theme-text-secondary mt-4 text-sm leading-relaxed transition-colors duration-200">
             Du code à l’architecture, nous transformons des idées en solutions web
             claires, fiables et performantes.
           </p>
@@ -54,7 +54,7 @@ export default function Footer() {
 
         {/* Navigation */}
         <nav aria-label="Navigation du site">
-          <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-white">
+          <h3 className="theme-text-primary mb-4 text-sm font-semibold uppercase tracking-wide transition-colors duration-200">
             Navigation
           </h3>
           <ul className="space-y-2 text-sm">
@@ -76,7 +76,7 @@ export default function Footer() {
 
         {/* Contact & réseaux */}
         <section>
-          <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-white">
+          <h3 className="theme-text-primary mb-4 text-sm font-semibold uppercase tracking-wide transition-colors duration-200">
             Contact & réseaux
           </h3>
 
@@ -121,14 +121,14 @@ export default function Footer() {
       </div>
 
       {/* Bas du footer */}
-      <div className="border-t border-slate-800 py-4 text-xs text-gray-400 relative">
+      <div className="theme-border border-t py-4 text-xs relative">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="text-center sm:text-left">
             © {new Date().getFullYear()} ArisDev — Tous droits réservés
           </div>
           <div className="mt-0">
             <div
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs text-gray-200 bg-slate-800/40 backdrop-blur-sm"
+              className="theme-text-primary theme-surface-alt inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs backdrop-blur-sm transition-colors duration-200"
               role="note"
             >
               <MapPin size={13} className="text-yellow-400" />
