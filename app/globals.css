@@ -128,7 +128,7 @@ html.theme-light {
   --background: #f8fafc;
   --foreground: #0f172a;
   --brand: #FBBF24;
-  --muted: #64748b;
+  --muted: #475569;
   --surface: #e2e8f0;
   --surface-alt: #cbd5e1;
   --border: #94a3b8;
@@ -182,16 +182,46 @@ html.theme-light .site-navbar .nav-link {
   background-color: var(--overlay);
 }
 
-html.theme-light .site-navbar {
-  background-color: #e2e8f0;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+/* Global utility alignment so all components follow theme without per-file refactor */
+html.theme-light .bg-slate-950,
+html.theme-light .bg-slate-900,
+html.theme-light .bg-slate-900\/95,
+html.theme-light .bg-slate-900\/80,
+html.theme-light .bg-slate-900\/70 {
+  background-color: #f8fafc !important;
 }
 
-html.theme-light .site-navbar .brand-title {
-  color: #0f172a;
+html.theme-light .bg-slate-800,
+html.theme-light .bg-slate-800\/80,
+html.theme-light .bg-slate-800\/50,
+html.theme-light .bg-slate-800\/40,
+html.theme-light .bg-slate-800\/30,
+html.theme-light .bg-slate-700 {
+  background-color: #e2e8f0 !important;
 }
 
-html.theme-light .site-navbar .brand-subtitle,
-html.theme-light .site-navbar .nav-link {
-  color: #334155;
+html.theme-light .text-white,
+html.theme-light .text-slate-200,
+html.theme-light .text-slate-300,
+html.theme-light .text-slate-400,
+html.theme-light .text-gray-200,
+html.theme-light .text-gray-300,
+html.theme-light .text-gray-400 {
+  color: #0f172a !important;couleur
+}
+
+html.theme-light .border-slate-900,
+html.theme-light .border-slate-800,
+html.theme-light .border-slate-700,
+html.theme-light .border-slate-600,
+html.theme-light .border-slate-700\/50,
+html.theme-light .border-slate-700\/40 {
+  border-color: #94a3b8 !important;
+}
+
+html.theme-light .shadow-slate-950\/50,
+html.theme-light .shadow-slate-950,
+html.theme-light .shadow-slate-900,
+html.theme-light .shadow-slate-800 {
+  --tw-shadow-color: rgba(100, 116, 139, 0.35) !important;
 }
