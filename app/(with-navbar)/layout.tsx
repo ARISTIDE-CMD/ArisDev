@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "../globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     icon: "/logo.png",
     apple: "/logo.png",
   },
+};
+
+export const viewport: Viewport = {
   themeColor: "#0f172a",
 };
 

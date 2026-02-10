@@ -94,13 +94,13 @@ export default function Services() {
   }, []);
 
   return (
-    <section ref={ref} className="w-full bg-slate-900 py-6">
+    <section ref={ref} className="theme-bg-main w-full py-6 transition-colors duration-200">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-  <h2 className="text-3xl md:text-4xl font-extrabold text-white">
+  <h2 className="theme-text-primary text-3xl md:text-4xl font-extrabold transition-colors duration-200">
     Des services digitaux qui soutiennent votre croissance
   </h2>
-  <p className="text-slate-300 mt-3 max-w-2xl mx-auto">
+  <p className="theme-text-secondary mt-3 max-w-2xl mx-auto transition-colors duration-200">
     Des solutions claires et structurées pour transformer vos idées
     en produits numériques solides.
   </p>
@@ -131,9 +131,9 @@ export default function Services() {
                 tabIndex={0}
                 aria-labelledby={id}
                 style={{ animationDelay: inView ? `${index * 120}ms` : '0ms' }}
-                className={`service-card group bg-slate-900 p-4 rounded-xl border border-slate-700/40 shadow-lg hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-yellow-400/30 ${inView ? 'is-visible' : ''}`}
+                className={`service-card theme-surface group p-4 rounded-xl border theme-border shadow-lg hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-yellow-400/30 transition-colors duration-200 ${inView ? 'is-visible' : ''}`}
               >
-                <div className="relative h-40 md:h-48 lg:h-56 mb-4 overflow-hidden rounded-md bg-slate-800">
+                <div className="theme-surface-alt relative h-40 md:h-48 lg:h-56 mb-4 overflow-hidden rounded-md transition-colors duration-200">
                   {/* Utilisation de next/image avec centrage et zoom limité pour éviter le débordement */}
                   <Image
                     src={s.imageSrc}
@@ -145,8 +145,8 @@ export default function Services() {
                 <div className="flex items-start gap-4">
                   <div className="text-3xl">💡</div>
                   <div>
-                    <h3 className="text-xl font-semibold text-white">{s.title}</h3>
-                    <p className="text-slate-300 mt-2">{s.subtitle}</p>
+                    <h3 className="theme-text-primary text-xl font-semibold transition-colors duration-200">{s.title}</h3>
+                    <p className="theme-text-secondary mt-2 transition-colors duration-200">{s.subtitle}</p>
                   </div>
                 </div>
               </article>

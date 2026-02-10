@@ -26,7 +26,7 @@ function Navbar() {
     const handleLinkClick = () => setIsOpen(false);
 
     return (
-        <nav className="sticky top-0 z-50 bg-slate-900 shadow-xl shadow-slate-950/50">
+        <nav className="site-navbar sticky top-0 z-50 shadow-xl shadow-slate-950/50 transition-colors duration-200">
             <div className="container mx-auto px-2 flex items-center justify-between">
 
                 {/* Logo/Branding */}
@@ -35,10 +35,10 @@ function Navbar() {
                         <img src="/logofinal.png" alt="Logo" width={50} height={50} />
                     </Link>
                     <div className="leading-none">
-                        <h1 className="text-xl font-bold text-white tracking-wider">
+                        <h1 className="brand-title text-xl font-bold text-white tracking-wider transition-colors duration-200">
                             Aris<span className="text-yellow-400">Dev</span>
                         </h1>
-                        <h3 className="text-sm font-medium text-slate-400">
+                        <h3 className="brand-subtitle text-sm font-medium text-slate-400 transition-colors duration-200">
                             Solutions digitales claires, utiles et orientées résultat
                         </h3>
                     </div>
@@ -65,7 +65,7 @@ function Navbar() {
                                 <li key={link.href}>
                                     <Link
                                         href={link.href}
-                                        className={`relative py-2 transition-all duration-300 group ${isActive ? "text-yellow-400" : "text-slate-300 hover:text-white"
+                                        className={`nav-link relative py-2 transition-all duration-300 group ${isActive ? "text-yellow-400" : "text-slate-300 hover:text-white"
                                             }`}
                                         onClick={handleLinkClick}
                                     >
