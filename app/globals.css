@@ -181,3 +181,17 @@ html.theme-light .site-navbar .nav-link {
 .theme-overlay {
   background-color: var(--overlay);
 }
+
+html.theme-light .site-navbar {
+  background-color: #e2e8f0;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+
+html.theme-light .site-navbar .brand-title {
+  color: #0f172a;
+}
+
+html.theme-light .site-navbar .brand-subtitle,
+html.theme-light .site-navbar .nav-link {
+  color: #334155;
+}
