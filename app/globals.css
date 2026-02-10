@@ -128,7 +128,7 @@ html.theme-light {
   --background: #f8fafc;
   --foreground: #0f172a;
   --brand: #FBBF24;
-  --muted: #475569;
+  --muted: #64748b;
   --surface: #e2e8f0;
   --surface-alt: #cbd5e1;
   --border: #94a3b8;
@@ -182,36 +182,16 @@ html.theme-light .site-navbar .nav-link {
   background-color: var(--overlay);
 }
 
-/* Global utility alignment so all components follow theme without per-file refactor */
-html.theme-light [class*="bg-slate-950"],
-html.theme-light [class*="bg-slate-900"] {
-  background-color: #f8fafc !important;
+html.theme-light .site-navbar {
+  background-color: #e2e8f0;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
 }
 
-html.theme-light [class*="bg-slate-800"],
-html.theme-light [class*="bg-slate-700"] {
-  background-color: #e2e8f0 !important;
+html.theme-light .site-navbar .brand-title {
+  color: #0f172a;
 }
 
-html.theme-light .text-white,
-html.theme-light .text-slate-200,
-html.theme-light .text-slate-300,
-html.theme-light .text-slate-400,
-html.theme-light .text-gray-200,
-html.theme-light .text-gray-300,
-html.theme-light .text-gray-400 {
-  color: #0f172a !important;
-}
-
-html.theme-light [class*="border-slate-900"],
-html.theme-light [class*="border-slate-800"],
-html.theme-light [class*="border-slate-700"],
-html.theme-light [class*="border-slate-600"] {
-  border-color: #94a3b8 !important;
-}
-
-html.theme-light [class*="shadow-slate-950"],
-html.theme-light [class*="shadow-slate-900"],
-html.theme-light [class*="shadow-slate-800"] {
-  --tw-shadow-color: rgba(100, 116, 139, 0.35) !important;
+html.theme-light .site-navbar .brand-subtitle,
+html.theme-light .site-navbar .nav-link {
+  color: #334155;
 }
