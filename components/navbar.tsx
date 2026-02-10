@@ -26,7 +26,11 @@ function Navbar() {
     const handleLinkClick = () => setIsOpen(false);
 
     return (
+<<<<<<< codex/implement-theme-change-on-button-click-gv0273
         <nav className="site-navbar sticky top-0 z-50 shadow-xl shadow-slate-950/50 transition-colors duration-200">
+=======
+<!--         <nav className="site-navbar sticky top-0 z-50 bg-slate-900 shadow-xl shadow-slate-950/50 transition-colors duration-200">
+>>>>>>> main -->
             <div className="container mx-auto px-2 flex items-center justify-between">
 
                 {/* Logo/Branding */}
