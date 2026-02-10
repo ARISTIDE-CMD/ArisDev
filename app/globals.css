@@ -7,6 +7,11 @@
   /* jaune doux */
   --muted: #94A3B8;
   --bg-dark: #0f1724;
+  --surface: #111827;
+  --surface-alt: #1f2937;
+  --border: #334155;
+  --overlay: rgba(15, 23, 36, 0.8);
+  --navbar-bg: #0f172a;
 }
 
 @theme inline {
@@ -111,6 +116,11 @@ html.theme-dark {
   --foreground: #e6eef8;
   --brand: #FBBF24;
   --muted: #94A3B8;
+  --surface: #111827;
+  --surface-alt: #1e293b;
+  --border: #334155;
+  --overlay: rgba(15, 23, 36, 0.8);
+  --navbar-bg: #0f172a;
 }
 
 /* Theme class override: toggle by adding `theme-light` on <html> */
@@ -119,4 +129,55 @@ html.theme-light {
   --foreground: #0f172a;
   --brand: #FBBF24;
   --muted: #64748b;
+  --surface: #e2e8f0;
+  --surface-alt: #cbd5e1;
+  --border: #94a3b8;
+  --overlay: rgba(241, 245, 249, 0.68);
+  --navbar-bg: #e2e8f0;
+}
+
+html.theme-light .site-navbar {
+  background-color: var(--navbar-bg);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+
+html.theme-dark .site-navbar {
+  background-color: var(--navbar-bg);
+}
+
+html.theme-light .site-navbar .brand-title {
+  color: #0f172a;
+}
+
+html.theme-light .site-navbar .brand-subtitle,
+html.theme-light .site-navbar .nav-link {
+  color: #334155;
+}
+
+.theme-bg-main {
+  background-color: var(--background);
+}
+
+.theme-surface {
+  background-color: var(--surface);
+}
+
+.theme-surface-alt {
+  background-color: var(--surface-alt);
+}
+
+.theme-text-primary {
+  color: var(--foreground);
+}
+
+.theme-text-secondary {
+  color: var(--muted);
+}
+
+.theme-border {
+  border-color: var(--border);
+}
+
+.theme-overlay {
+  background-color: var(--overlay);
 }
