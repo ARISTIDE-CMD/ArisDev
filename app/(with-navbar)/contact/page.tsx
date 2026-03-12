@@ -38,8 +38,8 @@ export default function ContactSection() {
             Restons en Contact
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Une idée, un projet, ou simplement envie d'échanger ?
-            N'hésitez pas à me contacter, je serais ravi de discuter avec vous.
+            Une idée, un projet, ou simplement envie d&apos;échanger ?
+            N&apos;hésitez pas à me contacter, je serais ravi de discuter avec vous.
           </p>
         </div>
 

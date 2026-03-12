@@ -2,11 +2,10 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Arisdev",
-  description: "Solutions digitales claires, utiles et orientées résultat",
+  title: "Aristide Kenfack | Portfolio",
+  description: "Développeur Full Stack & DevOps — Douala, Cameroun",
   icons: {
     icon: "/logofinal.png",
     apple: "/logofinal.png",
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0f172a",
+  themeColor: "#06080f",
 };
 
 export default function RootLayout({

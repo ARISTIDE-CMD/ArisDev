@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Encodage des caractères (UTF-8) pour gérer les accents -->
+    
+    <!-- Configuration de l'affichage pour les appareils mobiles (Responsive) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titre de la page affiché dans l'onglet du navigateur -->
+    <title>Guide Complet des Balises HTML</title>
+    <!-- Zone de styles CSS pour la mise en forme de la page -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .section {
+            border: 3px solid #667eea;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            background: #f8f9ff;
+        }
+
+        .section h2 {
+            color: #764ba2;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .tag-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .tag-item {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .tag-item:hover {
+            border-color: #667eea;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .tag-name {
+            font-family: 'Courier New', monospace;
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .tag-description {
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        .example {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            color: #333;
+        }
+    </style>
+</head>
+
+<!-- Corps de la page contenant les éléments visibles -->
+
+<body>
+    <!-- Conteneur principal pour centrer le contenu -->
+    <div class="container">
+        <!-- Menu de navigation entre les cours -->
+        <div style="background: #f0f0f0; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center; font-family: sans-serif;">
+            <a href="http://127.0.0.1:5500/index.html" style="margin: 0 10px; text-decoration: none; color: #333; font-weight: bold;">
+                HTML</a> |
+            <!-- <a href="learnhtml.html"
+                        style="margin: 0 10px; text-decoration: none; color: #333; font-weight: bold;">Structure HTML</a> | -->
+            <a href="http://127.0.0.1:5500/learncss.html" style="margin: 0 10px; text-decoration: none; color: #333; font-weight: bold;">CSS</a> |
+            <a href="http://127.0.0.1:5500/learnjs.html" style="margin: 0 10px; text-decoration: none; color: #333; font-weight: bold;">JavaScript</a>
+            |
+            <a href="http://127.0.0.1:5500/learnphp.html" style="margin: 0 10px; text-decoration: none; color: #333; font-weight: bold;">PhP</a>
+            <a href="http://127.0.0.1:5500/learnreact.html" style="margin: 0 10px; text-decoration: none; color: #333; font-weight: bold;">React</a>
+        </div>
+
+        <!-- Titre principal de niveau 1 -->
+        <h1>📚 Guide Complet du HTML</h1>
+        <!-- Paragraphe de sous-titre -->
+        <p class="subtitle">Référence complète des balises HTML5 organisées par catégorie</p>
+
+        <!-- Section 1 : Structure du Document -->
+        <div class="section">
+            <!-- Titre de section de niveau 2 -->
+            <h2>🏗️ Structure du Document</h2>
+            <div class="tag-grid">
+                <div class="tag-item">
+                    <div class="tag-name">&lt;!DOCTYPE&gt;</div>
+                    <div class="tag-description">Déclare le type de document</div>
+                    <div class="example">&lt;!DOCTYPE html&gt;</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;html&gt;</div>
+                    <div class="tag-description">Racine du document HTML</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;head&gt;</div>
+                    <div class="tag-description">Contient les métadonnées</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;body&gt;</div>
+                    <div class="tag-description">Contient le contenu visible</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;title&gt;</div>
+                    <div class="tag-description">Titre de la page</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;meta&gt;</div>
+                    <div class="tag-description">Métadonnées du document</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2 : Titres et Texte -->
+        <div class="section">
+            <h2>📝 Titres et Texte</h2>
+            <div class="tag-grid">
+                <div class="tag-item">
+                    <div class="tag-name">&lt;h1&gt; à &lt;h6&gt;</div>
+                    <div class="tag-description">Titres de niveau 1 à 6</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;p&gt;</div>
+                    <div class="tag-description">Paragraphe</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;br&gt;</div>
+                    <div class="tag-description">Saut de ligne</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;hr&gt;</div>
+                    <div class="tag-description">Ligne horizontale</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;pre&gt;</div>
+                    <div class="tag-description">Texte préformaté</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3 : Formatage de Texte -->
+        <div class="section">
+            <h2>✍️ Formatage de Texte</h2>
+            <div class="tag-grid">
+                <div class="tag-item">
+                    <div class="tag-name">&lt;strong&gt;</div>
+                    <div class="tag-description">Texte important (gras)</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;em&gt;</div>
+                    <div class="tag-description">Texte emphase (italique)</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;b&gt;</div>
+                    <div class="tag-description">Texte en gras</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;i&gt;</div>
+                    <div class="tag-description">Texte en italique</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;u&gt;</div>
+                    <div class="tag-description">Texte souligné</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;mark&gt;</div>
+                    <div class="tag-description">Texte surligné</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;small&gt;</div>
+                    <div class="tag-description">Texte petit</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;del&gt;</div>
+                    <div class="tag-description">Texte supprimé</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;ins&gt;</div>
+                    <div class="tag-description">Texte inséré</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;sub&gt;</div>
+                    <div class="tag-description">Texte en indice</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;sup&gt;</div>
+                    <div class="tag-description">Texte en exposant</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;code&gt;</div>
+                    <div class="tag-description">Code informatique</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4 : Liens et Navigation -->
+        <div class="section">
+            <h2>🔗 Liens et Navigation</h2>
+            <div class="tag-grid">
+                <div class="tag-item">
+                    <div class="tag-name">&lt;a&gt;</div>
+                    <div class="tag-description">Lien hypertexte</div>
+                    <div class="example">&lt;a href="url"&gt;Texte&lt;/a&gt;</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;nav&gt;</div>
+                    <div class="tag-description">Section de navigation</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;link&gt;</div>
+                    <div class="tag-description">Lie une ressource externe</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5 : Listes -->
+        <div class="section">
+            <h2>📋 Listes</h2>
+            <div class="tag-grid">
+                <div class="tag-item">
+                    <div class="tag-name">&lt;ul&gt;</div>
+                    <div class="tag-description">Liste non ordonnée</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;ol&gt;</div>
+                    <div class="tag-description">Liste ordonnée</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;li&gt;</div>
+                    <div class="tag-description">Élément de liste</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;dl&gt;</div>
+                    <div class="tag-description">Liste de définitions</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;dt&gt;</div>
+                    <div class="tag-description">Terme de définition</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;dd&gt;</div>
+                    <div class="tag-description">Description de définition</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6 : Images et Média -->
+        <div class="section">
+            <h2>🖼️ Images et Média</h2>
+            <div class="tag-grid">
+                <div class="tag-item">
+                    <div class="tag-name">&lt;img&gt;</div>
+                    <div class="tag-description">Image</div>
+                    <div class="example">&lt;img src="url" alt="desc"&gt;</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;figure&gt;</div>
+                    <div class="tag-description">Contenu avec légende</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;figcaption&gt;</div>
+                    <div class="tag-description">Légende de figure</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;video&gt;</div>
+                    <div class="tag-description">Vidéo</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;audio&gt;</div>
+                    <div class="tag-description">Audio</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;source&gt;</div>
+                    <div class="tag-description">Source média</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;picture&gt;</div>
+                    <div class="tag-description">Image responsive</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;svg&gt;</div>
+                    <div class="tag-description">Graphique vectoriel</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;canvas&gt;</div>
+                    <div class="tag-description">Zone de dessin</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 7 : Tableaux -->
+        <div class="section">
+            <h2>📊 Tableaux</h2>
+            <div class="tag-grid">
+                <div class="tag-item">
+                    <div class="tag-name">&lt;table&gt;</div>
+                    <div class="tag-description">Tableau</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;thead&gt;</div>
+                    <div class="tag-description">En-tête de tableau</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;tbody&gt;</div>
+                    <div class="tag-description">Corps de tableau</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;tfoot&gt;</div>
+                    <div class="tag-description">Pied de tableau</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;tr&gt;</div>
+                    <div class="tag-description">Ligne de tableau</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;th&gt;</div>
+                    <div class="tag-description">Cellule d'en-tête</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;td&gt;</div>
+                    <div class="tag-description">Cellule de données</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;caption&gt;</div>
+                    <div class="tag-description">Titre de tableau</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 8 : Formulaires -->
+        <div class="section">
+            <h2>📝 Formulaires</h2>
+            <div class="tag-grid">
+                <div class="tag-item">
+                    <div class="tag-name">&lt;form&gt;</div>
+                    <div class="tag-description">Formulaire</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;input&gt;</div>
+                    <div class="tag-description">Champ de saisie</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;textarea&gt;</div>
+                    <div class="tag-description">Zone de texte multiligne</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;button&gt;</div>
+                    <div class="tag-description">Bouton</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;select&gt;</div>
+                    <div class="tag-description">Liste déroulante</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;option&gt;</div>
+                    <div class="tag-description">Option de sélection</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;label&gt;</div>
+                    <div class="tag-description">Étiquette de champ</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;fieldset&gt;</div>
+                    <div class="tag-description">Groupe de champs</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;legend&gt;</div>
+                    <div class="tag-description">Titre de groupe</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;datalist&gt;</div>
+                    <div class="tag-description">Liste d'options</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;output&gt;</div>
+                    <div class="tag-description">Résultat de calcul</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 9 : Structure Sémantique -->
+        <div class="section">
+            <h2>🏛️ Structure Sémantique</h2>
+            <div class="tag-grid">
+                <div class="tag-item">
+                    <div class="tag-name">&lt;header&gt;</div>
+                    <div class="tag-description">En-tête de section</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;footer&gt;</div>
+                    <div class="tag-description">Pied de page</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;main&gt;</div>
+                    <div class="tag-description">Contenu principal</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;section&gt;</div>
+                    <div class="tag-description">Section thématique</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;article&gt;</div>
+                    <div class="tag-description">Article autonome</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;aside&gt;</div>
+                    <div class="tag-description">Contenu complémentaire</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;div&gt;</div>
+                    <div class="tag-description">Division générique</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;span&gt;</div>
+                    <div class="tag-description">Conteneur en ligne</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 10 : Citations et Références -->
+        <div class="section">
+            <h2>💬 Citations et Références</h2>
+            <div class="tag-grid">
+                <div class="tag-item">
+                    <div class="tag-name">&lt;blockquote&gt;</div>
+                    <div class="tag-description">Citation longue</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;q&gt;</div>
+                    <div class="tag-description">Citation courte</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;cite&gt;</div>
+                    <div class="tag-description">Référence d'œuvre</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;abbr&gt;</div>
+                    <div class="tag-description">Abréviation</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;address&gt;</div>
+                    <div class="tag-description">Informations de contact</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 11 : Scripts et Styles -->
+        <div class="section">
+            <h2>💻 Scripts et Styles</h2>
+            <div class="tag-grid">
+                <div class="tag-item">
+                    <div class="tag-name">&lt;script&gt;</div>
+                    <div class="tag-description">Code JavaScript</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;noscript&gt;</div>
+                    <div class="tag-description">Contenu sans JS</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;style&gt;</div>
+                    <div class="tag-description">Styles CSS</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 12 : Autres Balises Utiles -->
+        <div class="section">
+            <h2>🔧 Autres Balises Utiles</h2>
+            <div class="tag-grid">
+                <div class="tag-item">
+                    <div class="tag-name">&lt;iframe&gt;</div>
+                    <div class="tag-description">Cadre incorporé</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;embed&gt;</div>
+                    <div class="tag-description">Contenu externe</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;object&gt;</div>
+                    <div class="tag-description">Objet incorporé</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;details&gt;</div>
+                    <div class="tag-description">Détails dépliables</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;summary&gt;</div>
+                    <div class="tag-description">Résumé de details</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;dialog&gt;</div>
+                    <div class="tag-description">Boîte de dialogue</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;progress&gt;</div>
+                    <div class="tag-description">Barre de progression</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;meter&gt;</div>
+                    <div class="tag-description">Jauge de mesure</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;time&gt;</div>
+                    <div class="tag-description">Date/heure</div>
+                </div>
+                <div class="tag-item">
+                    <div class="tag-name">&lt;data&gt;</div>
+                    <div class="tag-description">Données lisibles</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>

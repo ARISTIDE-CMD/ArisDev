@@ -2,9 +2,13 @@
 
 import { useState } from "react";
 
+type User = {
+  name: string;
+};
+
 export default function LoginForm() {
   const [email, setEmail] = useState("");
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(false);
 
   const handleLogin = async () => {
@@ -15,11 +19,11 @@ export default function LoginForm() {
       body: JSON.stringify({ email }),
     });
 
-    const data = await res.json();
+    const data = (await res.json()) as { user?: User; error?: string };
     if (res.ok) {
-      setUser(data.user);
+      setUser(data.user ?? null);
     } else {
-      alert(data.error);
+      alert(data.error ?? "Erreur");
     }
     setLoading(false);
   };

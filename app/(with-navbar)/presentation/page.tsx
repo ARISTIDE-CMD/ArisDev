@@ -88,10 +88,10 @@ export default function AboutSection() {
             ArisDev
           </h1>
           <p className="text-2xl md:text-3xl text-gray-300 font-light mb-6">
-            L'excellence technique au service de votre rentabilité
+            L&apos;excellence technique au service de votre rentabilité
           </p>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Plus qu'une agence, nous sommes votre **bras droit technologique**. Nous aidons les entreprises et les créateurs à briser le plafond de verre du numérique grâce à des solutions <span className="text-yellow-400 font-semibold">robustes, rapides et génératrices de valeur</span>.
+            Plus qu&apos;une agence, nous sommes votre **bras droit technologique**. Nous aidons les entreprises et les créateurs à briser le plafond de verre du numérique grâce à des solutions <span className="text-yellow-400 font-semibold">robustes, rapides et génératrices de valeur</span>.
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export default function AboutSection() {
               La technologie doit être un moteur de croissance, pas un frein.
             </p>
             <p className="text-gray-400 leading-relaxed max-w-2xl mx-auto">
-              Nous avons supprimé le jargon complexe pour nous concentrer sur l'essentiel : **vos résultats**. Notre méthode repose sur une architecture solide et une transparence totale.
+              Nous avons supprimé le jargon complexe pour nous concentrer sur l&apos;essentiel : **vos résultats**. Notre méthode repose sur une architecture solide et une transparence totale.
             </p>
           </div>
 
@@ -223,7 +223,7 @@ export default function AboutSection() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-yellow-400/20 rounded-3xl p-12 shadow-2xl">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-              Prêt à passer à l'étape <span className="text-yellow-400">supérieure ?</span>
+              Prêt à passer à l&apos;étape <span className="text-yellow-400">supérieure ?</span>
             </h2>
             <p className="text-xl text-gray-400 mb-10">
               Ne laissez pas la complexité technique freiner vos ambitions. Discutons de vos objectifs et voyons comment nous pouvons les atteindre ensemble.
