@@ -37,6 +37,69 @@ body {
   transition: background-color 220ms ease, color 220ms ease;
 }
 
+/* Galaxy background (nebula + stars) */
+@keyframes galaxy-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-1.5%, -0.5%, 0) scale(1.02);
+  }
+
+  100% {
+    transform: translate3d(1.5%, 0.5%, 0) scale(1);
+  }
+}
+
+.galaxy-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 45% at 70% 0%, rgba(245, 158, 11, 0.14), transparent 60%),
+    radial-gradient(ellipse 55% 45% at 20% 15%, rgba(56, 189, 248, 0.12), transparent 62%),
+    radial-gradient(ellipse 60% 50% at 80% 75%, rgba(167, 139, 250, 0.10), transparent 60%),
+    radial-gradient(ellipse 55% 45% at 10% 70%, rgba(45, 212, 191, 0.08), transparent 62%),
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.10) 1px, transparent 2px),
+    radial-gradient(circle at 65% 35%, rgba(255, 255, 255, 0.07) 1px, transparent 2px),
+    radial-gradient(circle at 35% 80%, rgba(255, 255, 255, 0.06) 1px, transparent 2px);
+  background-size:
+    1200px 900px,
+    1000px 800px,
+    1200px 900px,
+    1000px 800px,
+    260px 260px,
+    360px 360px,
+    520px 520px;
+  background-position:
+    60% -10%,
+    0% 0%,
+    100% 80%,
+    0% 100%,
+    0 0,
+    120px 60px,
+    -80px 140px;
+  opacity: 0.85;
+  filter: saturate(1.05);
+  animation: galaxy-drift 34s ease-in-out infinite alternate;
+}
+
+/* Shared hover animation for cards (subtle lift + shadow) */
+.card-hover {
+  transition:
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
+}
+
 .itemNav:hover {
   color: blue;
 }
@@ -95,6 +158,19 @@ body {
   .cta-animate {
     animation: none !important;
     transition: none !important;
+  }
+
+  .galaxy-bg {
+    animation: none !important;
+  }
+
+  .card-hover {
+    transition: none !important;
+  }
+
+  .card-hover:hover {
+    transform: none !important;
+    box-shadow: none !important;
   }
 }
 

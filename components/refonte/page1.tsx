@@ -97,13 +97,15 @@ export default function HeroPage() {
         }
       `}</style>
 
-      <main className="min-h-screen bg-[#06080f] grid-bg glow-hero overflow-hidden relative">
+      <main className="min-h-screen bg-transparent grid-bg glow-hero overflow-hidden relative">
         {/* Ambient glow orb */}
         <div className="pointer-events-none absolute -top-32 right-1/4 w-[700px] h-[700px] rounded-full bg-amber-500/5 blur-[140px]" />
 
         {/* Globe */}
-        <div className="pointer-events-none absolute top-0 right-0 translate-x-1/4 -translate-y-1/4 opacity-55 hidden lg:block">
-          <Globe />
+        <div className="pointer-events-none absolute -top-40 -right-40 opacity-60 z-0">
+          <div className="w-[420px] h-[420px] sm:w-[560px] sm:h-[560px] lg:w-[840px] lg:h-[840px] xl:w-[1050px] xl:h-[1050px]">
+            <Globe />
+          </div>
         </div>
 
         {/* ── HERO CONTENT ─────────────────────────────────────── */}

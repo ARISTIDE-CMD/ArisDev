@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 
 const quickLinks = [
   { href: "/", label: "Accueil" },
-  { href: "/about", label: "Parcours" },
+  // { href: "/about", label: "Parcours" },
   // { href: "/services", label: "Services" },
   { href: "/competences", label: "Compétences" },
   { href: "/myProjets", label: "Projets" },
@@ -12,7 +12,7 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#151c28] bg-[#06080f] text-slate-400">
+    <footer className="border-t border-[#151c28] bg-[#06080f]/85 backdrop-blur-md text-slate-400">
       <div className="mx-auto max-w-6xl px-6 py-12 grid gap-10 md:grid-cols-3">
         <section>
           <h2 className="text-slate-50 font-semibold text-lg">Aristide Kenfack</h2>

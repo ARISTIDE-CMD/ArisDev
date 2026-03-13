@@ -4,6 +4,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { Code2, Wrench, Layers, GitBranch, Sparkles, ChartGantt, RefreshCcw, Workflow } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { Reveal } from "@/components/refonte/Reveal";
 import {
   SiAlgolia,
   SiCss3,
@@ -262,26 +263,29 @@ export default function CompetencesPage() {
         .bar-animate { animation: bar-grow .9s cubic-bezier(.22,1,.36,1) both; }
       `}</style>
 
-      <main className="min-h-screen bg-[#06080f] text-slate-300 py-20 px-6">
+      <main className="min-h-screen bg-transparent text-slate-300 py-20 px-6">
         <div className="max-w-5xl mx-auto">
 
           {/* ── HEADER ──────────────────────────────────── */}
-          <header className="mb-16">
-            <p className="f-mono text-amber-400 text-xs tracking-[.18em] uppercase mb-4 flex items-center gap-3">
-              <span className="w-7 h-px bg-amber-400 inline-block" />
-              Compétences
-            </p>
-            <h1 className="f-syne font-extrabold text-4xl md:text-5xl text-slate-50 mb-3">
-              Stack technique &{" "}
-              <span className="text-amber-400">savoir-faire</span>
-            </h1>
-            <p className="text-slate-500 max-w-xl">
-              Un profil Full Stack orienté architecture, performance et automatisation — du composant UI au pipeline de déploiement.
-            </p>
-          </header>
+          <Reveal>
+            <header className="mb-16">
+              <p className="f-mono text-amber-400 text-xs tracking-[.18em] uppercase mb-4 flex items-center gap-3">
+                <span className="w-7 h-px bg-amber-400 inline-block" />
+                Compétences
+              </p>
+              <h1 className="f-syne font-extrabold text-4xl md:text-5xl text-slate-50 mb-3">
+                Stack technique &{" "}
+                <span className="text-amber-400">savoir-faire</span>
+              </h1>
+              <p className="text-slate-500 max-w-xl">
+                Un profil Full Stack orienté architecture, performance et automatisation — du composant UI au pipeline de déploiement.
+              </p>
+            </header>
+          </Reveal>
 
           {/* ── STACK OVERVIEW ────────────────────────── */}
-          <section className="bg-[#0c1018] border border-[#151c28] rounded-2xl p-7 mb-10">
+          <Reveal y={22}>
+            <section className="bg-[#0c1018] border border-[#151c28] rounded-2xl p-7 mb-10">
             <div className="flex items-start gap-3 mb-6">
               <div className="w-9 h-9 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center shrink-0">
                 <Sparkles size={17} className="text-amber-400" />
@@ -301,10 +305,12 @@ export default function CompetencesPage() {
                     {group.title}
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                    {group.skills.map((sk) => (
-                      <div
+                    {group.skills.map((sk, idx) => (
+                      <Reveal
                         key={sk.name}
-                        className="bg-[#0a1020] border border-[#1e2a38] rounded-[14px] p-4 hover:border-amber-400/30 transition-colors duration-300"
+                        delay={idx * 0.03}
+                        y={14}
+                        className="bg-[#0a1020] border border-[#1e2a38] rounded-[14px] p-4 hover:border-amber-400/30 transition-colors duration-300 card-hover"
                       >
                         <div className="flex items-start justify-between gap-3">
                           <div className="min-w-0">
@@ -330,13 +336,14 @@ export default function CompetencesPage() {
                             style={{ width: `${sk.level}%` }}
                           />
                         </div>
-                      </div>
+                      </Reveal>
                     ))}
                   </div>
                 </div>
               ))}
             </div>
-          </section>
+            </section>
+          </Reveal>
 
           {/* ── SKILL CATEGORIES ────────────────────────── */}
           {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
@@ -375,25 +382,29 @@ export default function CompetencesPage() {
           </div> */}
 
           {/* ── SOFT SKILLS / METHODOLOGIES ─────────────── */}
-          <div className="bg-[#0c1018] border border-[#151c28] rounded-2xl p-7">
-            <h2 className="f-syne font-bold text-slate-100 text-base mb-5">
-              Méthodologies & compétences transverses
-            </h2>
-            <div className="flex flex-wrap gap-3">
-              {softSkills.map((s) => (
-                <span key={s} className="f-mono text-xs text-slate-400 border border-[#1e2a38] bg-[#0a1020] px-4 py-2 rounded-full hover:border-amber-400/30 hover:text-amber-300 transition-colors duration-300 cursor-default">
-                  {s}
-                </span>
-              ))}
+          <Reveal y={18} delay={0.05}>
+            <div className="bg-[#0c1018] border border-[#151c28] rounded-2xl p-7 card-hover">
+              <h2 className="f-syne font-bold text-slate-100 text-base mb-5">
+                Méthodologies & compétences transverses
+              </h2>
+              <div className="flex flex-wrap gap-3">
+                {softSkills.map((s) => (
+                  <span key={s} className="f-mono text-xs text-slate-400 border border-[#1e2a38] bg-[#0a1020] px-4 py-2 rounded-full hover:border-amber-400/30 hover:text-amber-300 transition-colors duration-300 cursor-default">
+                    {s}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* ── LEGEND ───────────────────────────────────── */}
-          <div className="mt-8 flex flex-wrap gap-6 text-xs text-slate-600">
-            {Object.entries(tagColor).map(([tag, cls]) => (
-              <span key={tag} className={`f-mono px-3 py-1 rounded-full border ${cls}`}>{tag}</span>
-            ))}
-          </div>
+          <Reveal y={10} delay={0.08}>
+            <div className="mt-8 flex flex-wrap gap-6 text-xs text-slate-600">
+              {Object.entries(tagColor).map(([tag, cls]) => (
+                <span key={tag} className={`f-mono px-3 py-1 rounded-full border ${cls}`}>{tag}</span>
+              ))}
+            </div>
+          </Reveal>
 
         </div>
       </main>

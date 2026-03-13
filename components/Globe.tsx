@@ -3,9 +3,11 @@
 import { useEffect, useRef } from "react";
 import createGlobe from "cobe";
 
-export default function Globe() {
-  const size = 600;
-  const displaySize = Math.round(size * 5);
+type GlobeProps = {
+  className?: string;
+};
+
+export default function Globe({ className }: GlobeProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -15,41 +17,68 @@ export default function Globe() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    globe = createGlobe(canvas, {
-      devicePixelRatio: 2,
-      width: size,
-      height: size,
-      phi: 0,
-      theta: 0.3,
-      dark: 1,
-      diffuse: 1.2,
-      mapSamples: 16000,
-      mapBrightness: 6,
-      baseColor: [0.1, 0.1, 0.15],
-      markerColor: [0.96, 0.62, 0.04],
-      glowColor: [0.96, 0.62, 0.04],
-      markers: [
-        { location: [3.848, 11.502], size: 0.08 }, // Douala
-        { location: [48.8566, 2.3522], size: 0.05 }, // Paris
-      ],
-      onRender: (state) => {
-        state.phi = phi;
-        phi += 0.003;
-      },
-    });
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
-    return () => globe?.destroy();
+    const getSize = () => {
+      const { width, height } = canvas.getBoundingClientRect();
+      return {
+        width: Math.max(1, Math.round(width * dpr)),
+        height: Math.max(1, Math.round(height * dpr)),
+      };
+    };
+
+    let { width, height } = getSize();
+
+    const init = () => {
+      globe = createGlobe(canvas, {
+        devicePixelRatio: dpr,
+        width,
+        height,
+        phi: 0,
+        theta: 0.3,
+        dark: 1,
+        diffuse: 1.2,
+        mapSamples: 16000,
+        mapBrightness: 6,
+        baseColor: [0.1, 0.1, 0.15],
+        markerColor: [0.96, 0.62, 0.04],
+        glowColor: [0.96, 0.62, 0.04],
+        markers: [
+          { location: [3.848, 11.502], size: 0.08 }, // Douala
+          { location: [48.8566, 2.3522], size: 0.05 }, // Paris
+        ],
+        onRender: (state) => {
+          state.width = width;
+          state.height = height;
+          state.phi = phi;
+          phi += 0.003;
+        },
+      });
+    };
+
+    // Canvas can be 0×0 if hidden; wait for a real size.
+    if (width > 1 && height > 1) init();
+
+    const ro = new ResizeObserver(() => {
+      const size = getSize();
+      width = size.width;
+      height = size.height;
+
+      if (!globe && width > 1 && height > 1) init();
+      globe?.resize();
+    });
+    ro.observe(canvas);
+
+    return () => {
+      ro.disconnect();
+      globe?.destroy();
+    };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
-      style={{
-        width: displaySize,
-        height: displaySize,
-        maxWidth: "100%",
-        aspectRatio: "1",
-      }}
+      className={`block w-full h-full ${className ?? ""}`}
     />
   );
 }

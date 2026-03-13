@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Download, Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 
 type NavLink = {
   href: string;
@@ -83,39 +84,46 @@ function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      <div
-        className={`md:hidden border-t border-[#151c28] bg-[#06080f] ${
-          isOpen ? "block" : "hidden"
-        }`}
-      >
-        <div className="px-6 py-4 flex flex-col gap-3">
-          {links.map((link) => {
-            const isActive = pathname === link.href;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={handleLinkClick}
-                className={`py-2 text-sm font-medium ${
-                  isActive ? "text-amber-400" : "text-slate-300"
-                }`}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
-
-          <a
-            href="/file/CV_Aristide gael_kouandja kenfack.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 px-4 py-2 text-sm font-semibold transition-colors"
+      <AnimatePresence initial={false}>
+        {isOpen ? (
+          <motion.div
+            key="mobile-menu"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="md:hidden border-t border-[#151c28] bg-[#06080f]/90 backdrop-blur-md overflow-hidden"
           >
-            <Download size={16} />
-            Télécharger mon CV
-          </a>
-        </div>
-      </div>
+            <div className="px-6 py-4 flex flex-col gap-3">
+              {links.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={handleLinkClick}
+                    className={`py-2 text-sm font-medium transition-colors ${
+                      isActive ? "text-amber-400" : "text-slate-300 hover:text-slate-50"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+
+              <a
+                href="/file/CV_Aristide gael_kouandja kenfack.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 px-4 py-2 text-sm font-semibold transition-colors"
+              >
+                <Download size={16} />
+                Télécharger mon CV
+              </a>
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </nav>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { ExternalLink, Github, Play } from "lucide-react";
+import { Reveal } from "@/components/refonte/Reveal";
 
 interface Project {
   title: string;
@@ -129,7 +130,7 @@ function ProjectCard({ project }: { project: Project }) {
   const impactCls = project.impactColor ? impactBadge[project.impactColor] : impactBadge.emerald;
 
   return (
-    <div className="group bg-[#0c1018] border border-[#151c28] hover:border-[#1e2a38] rounded-[14px] p-7 flex flex-col gap-5 transition-colors duration-300 relative">
+    <div className="group bg-[#0c1018] border border-[#151c28] hover:border-[#1e2a38] rounded-[14px] p-7 flex flex-col gap-5 transition-colors duration-300 relative card-hover">
       {showLive && (
         <span className={`absolute top-5 right-5 f-mono text-[10px] px-2.5 py-0.5 rounded-[20px] border ${badgeCls}`}>
           Live ↗
@@ -228,46 +229,54 @@ export default function ProjectsPage() {
         body { background:#06080f; font-family:'DM Sans',sans-serif; }
       `}</style>
 
-      <main className="min-h-screen bg-[#06080f] text-slate-300 py-20 px-6">
+      <main className="min-h-screen bg-transparent text-slate-300 py-20 px-6">
         <div className="max-w-5xl mx-auto">
 
           {/* ── HEADER ──────────────────────────────────── */}
-          <header className="mb-16">
-            <p className="f-mono text-amber-400 text-xs tracking-[.18em] uppercase mb-4 flex items-center gap-3">
-              <span className="w-7 h-px bg-amber-400 inline-block" />
-              Projets
-            </p>
-            <h1 className="f-syne font-extrabold text-4xl md:text-5xl text-slate-50 mb-3">
-              Ce que j&apos;ai{" "}
-              <span className="text-amber-400">construit</span>
-            </h1>
-            <p className="text-slate-500 max-w-xl">
-              Applications en production, projets académiques et travaux open source — du mobile au backend, en passant par le DevOps.
-            </p>
-          </header>
+          <Reveal>
+            <header className="mb-16">
+              <p className="f-mono text-amber-400 text-xs tracking-[.18em] uppercase mb-4 flex items-center gap-3">
+                <span className="w-7 h-px bg-amber-400 inline-block" />
+                Projets
+              </p>
+              <h1 className="f-syne font-extrabold text-4xl md:text-5xl text-slate-50 mb-3">
+                Ce que j&apos;ai{" "}
+                <span className="text-amber-400">construit</span>
+              </h1>
+              <p className="text-slate-500 max-w-xl">
+                Applications en production, projets académiques et travaux open source — du mobile au backend, en passant par le DevOps.
+              </p>
+            </header>
+          </Reveal>
 
           {/* ── FEATURED ────────────────────────────────── */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-            {projects.filter((p) => p.featured).map((p) => (
-              <ProjectCard key={p.title} project={p} />
+            {projects.filter((p) => p.featured).map((p, idx) => (
+              <Reveal key={p.title} delay={idx * 0.06} y={14}>
+                <ProjectCard project={p} />
+              </Reveal>
             ))}
           </div>
 
           {/* ── OTHER PROJECTS ──────────────────────────── */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.filter((p) => !p.featured).map((p) => (
-              <ProjectCard key={p.title} project={p} />
+            {projects.filter((p) => !p.featured).map((p, idx) => (
+              <Reveal key={p.title} delay={idx * 0.05} y={14}>
+                <ProjectCard project={p} />
+              </Reveal>
             ))}
           </div>
 
           {/* ── CTA ──────────────────────────────────────── */}
-          <div className="mt-16 text-center">
-            <p className="text-slate-600 mb-5 text-sm">Voir tous mes dépôts publics</p>
-            <a href="https://github.com/ARISTIDE-CMD" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-[#1e2a38] hover:border-amber-400/30 text-slate-400 hover:text-amber-400 px-6 py-3 rounded-[14px] transition-all duration-300 f-syne font-medium text-sm">
-              <Github size={16} /> Profil GitHub
-            </a>
-          </div>
+          <Reveal y={12} delay={0.08}>
+            <div className="mt-16 text-center">
+              <p className="text-slate-600 mb-5 text-sm">Voir tous mes dépôts publics</p>
+              <a href="https://github.com/ARISTIDE-CMD" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-[#1e2a38] hover:border-amber-400/30 text-slate-400 hover:text-amber-400 px-6 py-3 rounded-[14px] transition-all duration-300 f-syne font-medium text-sm">
+                <Github size={16} /> Profil GitHub
+              </a>
+            </div>
+          </Reveal>
 
         </div>
       </main>
