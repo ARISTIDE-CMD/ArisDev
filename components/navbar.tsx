@@ -13,7 +13,7 @@ type NavLink = {
 
 const links: NavLink[] = [
   { href: "/", label: "Accueil" },
-  // { href: "/services", label: "Services" },
+  { href: "/about", label: "Parcours" },
   { href: "/competences", label: "Compétences" },
   { href: "/myProjets", label: "Projets" },
   { href: "/contact", label: "Contact" },

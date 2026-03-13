@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 
 const quickLinks = [
   { href: "/", label: "Accueil" },
-  // { href: "/about", label: "Parcours" },
+  { href: "/about", label: "Parcours" },
   // { href: "/services", label: "Services" },
   { href: "/competences", label: "Compétences" },
   { href: "/myProjets", label: "Projets" },

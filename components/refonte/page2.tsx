@@ -1,8 +1,12 @@
 "use client";
 
-import { CalendarDays, MapPin, Briefcase, GraduationCap, ExternalLink } from "lucide-react";
+import {
+  CalendarDays, MapPin, Briefcase,
+  GraduationCap, ExternalLink, ArrowUpRight,
+} from "lucide-react";
 import { Reveal } from "@/components/refonte/Reveal";
 
+/* ─── Data ─────────────────────────────────────────────── */
 const experiences = [
   {
     period: "Nov 2025 — Présent",
@@ -10,15 +14,14 @@ const experiences = [
     company: "Iziway Cameroun",
     location: "Akwa, Douala",
     type: "CDI",
+    active: true,
     bullets: [
       "Optimisation du moteur de recherche Typesense — latence réduite de 30 %",
       "Mise en place d'un système de monitoring pour la détection d'incidents en temps réel",
-      "Automatisation des pipelines de déploiement (CI/CD) via GitLab",
+      "Automatisation des pipelines de déploiement CI/CD via GitLab",
       "Collaboration transverse avec l'équipe produit pour intégrer de nouvelles fonctionnalités",
     ],
     stack: ["Next.js", "Tailwind", "Typesense", "Docker", "GitLab CI"],
-    color: "border-amber-400 bg-amber-400/5",
-    dot: "bg-amber-400",
   },
   {
     period: "Juin 2025 — Sept 2025",
@@ -26,14 +29,13 @@ const experiences = [
     company: "Resa and Pay",
     location: "Ndokoti, Douala",
     type: "Stage",
+    active: false,
     bullets: [
-      "Conception et développement d'une app de livraison complète (commandes, suivi temps réel, livreurs)",
+      "Conception et développement d'une app de livraison complète — commandes, suivi temps réel, livreurs",
       "API REST sécurisée avec Laravel pour la gestion centralisée des données",
       "Interfaces React Native avec gestion d'états, filtres dynamiques et upload de fichiers",
     ],
     stack: ["React Native", "Laravel", "MySQL", "REST API"],
-    color: "border-sky-400/40 bg-sky-400/5",
-    dot: "bg-sky-400",
   },
 ];
 
@@ -43,147 +45,214 @@ const education = [
     degree: "Licence Technologique — Informatique",
     school: "IUT Douala",
     location: "Douala, Cameroun",
+    active: true,
   },
   {
     period: "Oct 2023 — Juin 2025",
     degree: "DTS Génie Logiciel",
     school: "IAI Cameroun",
     location: "Yaoundé, Cameroun",
+    active: false,
   },
   {
     period: "2022 — 2023",
     degree: "Baccalauréat C (Scientifique)",
     school: "Lycée de Maképé",
     location: "Douala, Cameroun",
+    active: false,
   },
 ];
 
+/* ─── Page ─────────────────────────────────────────────── */
 export default function AboutPage() {
   return (
-    <>
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=DM+Mono:wght@400;500&display=swap');
-        .f-syne { font-family:'Syne',sans-serif; }
-        .f-mono  { font-family:'DM Mono',monospace; }
-        body { background:#06080f; font-family:'DM Sans',sans-serif; }
-      `}</style>
+    <main className="min-h-screen bg-transparent text-slate-300 py-20 px-6">
+      <div className="max-w-3xl mx-auto">
 
-      <main className="min-h-screen bg-transparent text-slate-300 py-20 px-6">
-        <div className="max-w-4xl mx-auto">
+        {/* ── HEADER ──────────────────────────────────────── */}
+        <Reveal>
+          <header className="mb-20">
+            <p className="f-mono text-amber-400 text-xs tracking-[.18em] uppercase mb-5 flex items-center gap-3">
+              <span className="w-7 h-px bg-amber-400 inline-block" />
+              À propos
+            </p>
 
-          {/* ── HEADER ───────────────────────────────────── */}
+            <h1 className="f-syne text-4xl md:text-5xl font-extrabold text-slate-50 mb-6 leading-[1.05]">
+              Aristide Gaël
+              <br />
+              <span className="text-amber-400">Kouandja Kenfack</span>
+            </h1>
+
+            {/* Meta infos */}
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-600 f-mono mb-10">
+              <span className="flex items-center gap-1.5">
+                <MapPin size={12} className="text-amber-400/60" />
+                Douala, Cameroun
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CalendarDays size={12} className="text-amber-400/60" />
+                02 août 2006
+              </span>
+              <a
+                href="https://porfolio-pdkp.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 hover:text-amber-400 transition-colors"
+              >
+                <ExternalLink size={12} className="text-amber-400/60" />
+                porfolio-pdkp.vercel.app
+              </a>
+            </div>
+
+            {/* Bio */}
+            <div className="relative pl-5">
+              <div className="absolute left-0 top-0 bottom-0 w-[2px] rounded-full"
+                style={{ background: "linear-gradient(to bottom, #f59e0b99, #f59e0b22, transparent)" }}
+              />
+              <p className="text-base md:text-lg leading-[1.8] text-slate-400 max-w-2xl">
+                Développeur Full Stack passionné par l&apos;architecture logicielle et les pratiques DevOps.
+                Je construis des applications robustes, du frontend interactif jusqu&apos;aux pipelines de déploiement
+                automatisé.{" "}
+                <span className="text-slate-300">Curieux, rigoureux</span>, toujours en veille sur les bonnes pratiques
+                de l&apos;ingénierie moderne.
+              </p>
+            </div>
+          </header>
+        </Reveal>
+
+        {/* ── EXPÉRIENCES ─────────────────────────────────── */}
+        <section className="mb-20">
           <Reveal>
-            <header className="mb-20">
-              <p className="f-mono text-amber-400 text-xs tracking-[.18em] uppercase mb-4 flex items-center gap-3">
-                <span className="w-7 h-px bg-amber-400 inline-block" />
-                À propos
-              </p>
-              <h1 className="f-syne text-4xl md:text-5xl font-extrabold text-slate-50 mb-6 leading-tight">
-                Aristide Gaël
-                <br />
-                <span className="text-amber-400">Kouandja Kenfack</span>
-              </h1>
-              <div className="flex flex-wrap gap-4 text-sm text-slate-500 mb-8">
-                <span className="flex items-center gap-1.5"><MapPin size={14} className="text-amber-400" /> Douala, Cameroun</span>
-                <span className="flex items-center gap-1.5"><CalendarDays size={14} className="text-amber-400" /> Né le 02 août 2006</span>
-                <a href="https://porfolio-pdkp.vercel.app" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 hover:text-amber-400 transition-colors">
-                  <ExternalLink size={14} className="text-amber-400" /> porfolio-pdkp.vercel.app
-                </a>
+            <div className="flex items-center gap-3 mb-10">
+              <div className="w-7 h-7 rounded-lg bg-amber-400/10 border border-amber-400/20 flex items-center justify-center">
+                <Briefcase size={13} className="text-amber-400" />
               </div>
-              <p className="text-base md:text-lg leading-relaxed text-slate-400 max-w-2xl border-l-2 border-amber-400/40 pl-5">
-                Développeur Full Stack passionné par l&apos;architecture logicielle et les pratiques DevOps.{" "}
-                Je construis des applications robustes, du frontend interactif jusqu&apos;aux pipelines de déploiement automatisé.{" "}
-                Curieux, rigoureux, et toujours en veille sur les bonnes pratiques de l&apos;ingénierie moderne.
-              </p>
-            </header>
-          </Reveal>
-
-          {/* ── EXPERIENCE ───────────────────────────────── */}
-          <section className="mb-20">
-            <Reveal>
-              <h2 className="f-syne font-bold text-slate-50 text-2xl mb-8 flex items-center gap-3">
-                <Briefcase size={20} className="text-amber-400" />
+              <h2 className="f-syne font-bold text-slate-400 text-xs tracking-[.14em] uppercase">
                 Expériences professionnelles
               </h2>
-            </Reveal>
+              <div className="flex-1 h-px bg-[#0d1520]" />
+            </div>
+          </Reveal>
 
-            <div className="space-y-6">
-              {experiences.map((xp, idx) => (
-                <Reveal key={xp.role} delay={idx * 0.06}>
-                  <div className={`rounded-2xl border ${xp.color} p-6 md:p-8 card-hover`}>
-                    <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
-                      <div>
-                        <h3 className="f-syne font-bold text-slate-50 text-lg">{xp.role}</h3>
-                        <p className="text-amber-400 font-medium">{xp.company}</p>
-                        <p className="text-slate-500 text-sm flex items-center gap-1 mt-0.5">
-                          <MapPin size={12} /> {xp.location}
-                        </p>
-                      </div>
-                      <div className="text-right flex-shrink-0">
-                        <span className="f-mono text-xs text-slate-500 block">{xp.period}</span>
-                        <span className="text-xs bg-amber-400/10 text-amber-400 border border-amber-400/20 px-2 py-0.5 rounded-full mt-1 inline-block">
+          <div>
+            {experiences.map((xp, idx) => (
+              <Reveal key={xp.role} delay={idx * 0.07}>
+                <article className="group relative py-8 border-b border-[#0c1520] last:border-0">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-4">
+
+                    {/* Période + badge */}
+                    <div className="sm:w-44 flex-shrink-0 pt-0.5">
+                      <p className="f-mono text-[10px] text-slate-600 leading-none mb-2">{xp.period}</p>
+                      <div className="flex items-center gap-2">
+                        {xp.active && (
+                          <span className="relative flex h-1.5 w-1.5">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400" />
+                          </span>
+                        )}
+                        <span className={`f-mono text-[9px] px-2 py-0.5 rounded-full border ${xp.active
+                            ? "text-emerald-400 border-emerald-400/30 bg-emerald-400/10"
+                            : "text-slate-600   border-slate-700/50   bg-transparent"
+                          }`}>
                           {xp.type}
                         </span>
                       </div>
                     </div>
 
-                    <ul className="space-y-2 mb-5">
-                      {xp.bullets.map((b) => (
-                        <li key={b} className="text-sm text-slate-400 flex gap-2">
-                          <span className="text-amber-400 mt-0.5 flex-shrink-0">›</span>
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
+                    {/* Contenu */}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-start justify-between gap-3 mb-1">
+                        <h3 className="f-syne font-bold text-slate-100 text-[1.1rem] leading-tight">
+                          {xp.role}
+                        </h3>
+                        <ArrowUpRight
+                          size={15}
+                          className="text-slate-800 group-hover:text-amber-400 transition-colors duration-200 flex-shrink-0 mt-1"
+                        />
+                      </div>
 
-                    <div className="flex flex-wrap gap-2">
-                      {xp.stack.map((s) => (
-                        <span key={s} className="f-mono text-xs text-slate-500 border border-[#1e2d40] bg-[#0c1825] px-3 py-1 rounded-full">
-                          {s}
-                        </span>
-                      ))}
+                      <p className="text-amber-400/75 text-sm font-medium mb-0.5">{xp.company}</p>
+                      <p className="f-mono text-[10px] text-slate-700 flex items-center gap-1 mb-5">
+                        <MapPin size={10} /> {xp.location}
+                      </p>
+
+                      {/* Bullets */}
+                      <ul className="space-y-2.5 mb-5">
+                        {xp.bullets.map((b) => (
+                          <li key={b} className="flex gap-3 text-sm text-slate-500 leading-relaxed">
+                            <span className="text-amber-400/40 flex-shrink-0 mt-0.5 select-none">›</span>
+                            <span className="group-hover:text-slate-400 transition-colors duration-300">{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      {/* Stack */}
+                      <div className="flex flex-wrap gap-1.5">
+                        {xp.stack.map((s) => (
+                          <span key={s} className="f-mono text-[10px] text-slate-600 border border-[#111c2c] bg-[#050b14] px-2.5 py-0.5 rounded-full">
+                            {s}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </Reveal>
-              ))}
-            </div>
-          </section>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </section>
 
-          {/* ── EDUCATION ────────────────────────────────── */}
-          <section>
-            <Reveal>
-              <h2 className="f-syne font-bold text-slate-50 text-2xl mb-8 flex items-center gap-3">
-                <GraduationCap size={20} className="text-amber-400" />
+        {/* ── FORMATION ───────────────────────────────────── */}
+        <section>
+          <Reveal>
+            <div className="flex items-center gap-3 mb-10">
+              <div className="w-7 h-7 rounded-lg bg-amber-400/10 border border-amber-400/20 flex items-center justify-center">
+                <GraduationCap size={13} className="text-amber-400" />
+              </div>
+              <h2 className="f-syne font-bold text-slate-400 text-xs tracking-[.14em] uppercase">
                 Formation
               </h2>
-            </Reveal>
+              <div className="flex-1 h-px bg-[#0d1520]" />
+            </div>
+          </Reveal>
 
-            <div className="relative pl-6 border-l border-[#1e2a38]">
-              {education.map((ed, i) => (
-                <Reveal
-                  key={ed.degree}
-                  className={`relative mb-8 last:mb-0 card-hover ${i < education.length - 1 ? "" : ""}`}
-                  delay={i * 0.05}
-                >
-                  {/* Dot */}
-                  <div className="absolute -left-[25px] w-3 h-3 rounded-full bg-amber-400 ring-4 ring-[#06080f]" />
+          <div>
+            {education.map((ed, idx) => (
+              <Reveal key={ed.degree} delay={idx * 0.06}>
+                <article className="group flex flex-col sm:flex-row sm:items-start gap-4 py-6 border-b border-[#0c1520] last:border-0">
 
-                  <div className="bg-[#0c1018] border border-[#151c28] rounded-xl p-5">
-                    <p className="f-mono text-xs text-slate-600 mb-1">{ed.period}</p>
-                    <h3 className="f-syne font-bold text-slate-100 text-base">{ed.degree}</h3>
-                    <p className="text-amber-400/80 text-sm">{ed.school}</p>
-                    <p className="text-slate-600 text-xs mt-0.5 flex items-center gap-1">
-                      <MapPin size={11} /> {ed.location}
+                  {/* Période + badge */}
+                  <div className="sm:w-44 flex-shrink-0 pt-0.5">
+                    <p className="f-mono text-[10px] text-slate-600 leading-none mb-2">{ed.period}</p>
+                    {ed.active && (
+                      <span className="f-mono text-[9px] px-2 py-0.5 rounded-full border text-emerald-400 border-emerald-400/30 bg-emerald-400/10 inline-flex items-center gap-1.5">
+                        <span className="relative flex h-1.5 w-1.5">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400" />
+                        </span>
+                        En cours
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Contenu */}
+                  <div className="flex-1">
+                    <h3 className="f-syne font-bold text-slate-100 text-base leading-tight mb-1 group-hover:text-slate-50 transition-colors">
+                      {ed.degree}
+                    </h3>
+                    <p className="text-amber-400/60 text-sm mb-0.5">{ed.school}</p>
+                    <p className="f-mono text-[10px] text-slate-700 flex items-center gap-1">
+                      <MapPin size={10} /> {ed.location}
                     </p>
                   </div>
-                </Reveal>
-              ))}
-            </div>
-          </section>
 
-        </div>
-      </main>
-    </>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+      </div>
+    </main>
   );
 }
