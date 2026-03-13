@@ -60,6 +60,13 @@ const education = [
 export default function AboutPage() {
   return (
     <>
+      <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=DM+Mono:wght@400;500&display=swap');
+        .f-syne { font-family:'Syne',sans-serif; }
+        .f-mono  { font-family:'DM Mono',monospace; }
+        body { background:#06080f; font-family:'DM Sans',sans-serif; }
+      `}</style>
+
       <main className="min-h-screen bg-[#06080f] text-slate-300 py-20 px-6">
         <div className="max-w-4xl mx-auto">
 

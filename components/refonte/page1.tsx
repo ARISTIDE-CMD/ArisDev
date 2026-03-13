@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ArrowRight, Github, Linkedin, Mail, ExternalLink } from "lucide-react";
+import Globe from "@/components/Globe";
 
 const roles = [
   "Développeur Full Stack",
@@ -12,13 +13,13 @@ const roles = [
 ];
 
 const techStack = [
-  { label: "React / Next.js", color: "text-sky-400 border-sky-900 bg-sky-950/60" },
-  { label: "React Native", color: "text-violet-400 border-violet-900 bg-violet-950/60" },
-  { label: "Laravel / PHP", color: "text-red-400 border-red-900 bg-red-950/60" },
-  { label: "TypeScript", color: "text-blue-400 border-blue-900 bg-blue-950/60" },
-  { label: "Docker · CI/CD", color: "text-teal-400 border-teal-900 bg-teal-950/60" },
-  { label: "Spring Boot", color: "text-green-400 border-green-900 bg-green-950/60" },
-  { label: "Node.js", color: "text-lime-400 border-lime-900 bg-lime-950/60" },
+  { label: "React / Next.js", color: "text-[#38bdf8] border-[#0c2d3e] bg-[#061624]" },
+  { label: "React Native", color: "text-[#a78bfa] border-[#2d1b4e] bg-[#120a22]" },
+  { label: "Laravel / PHP", color: "text-[#f87171] border-[#3d1515] bg-[#180808]" },
+  { label: "TypeScript", color: "text-[#60a5fa] border-[#1a2f4e] bg-[#06101e]" },
+  { label: "Docker · CI/CD", color: "text-[#2dd4bf] border-[#0d3530] bg-[#041814]" },
+  { label: "Spring Boot", color: "text-[#86efac] border-[#0d3018] bg-[#04180a]" },
+  { label: "Node.js", color: "text-[#64748b] border-[#1e2a38] bg-[#0a1020]" },
 ];
 
 const stats = [
@@ -56,6 +57,12 @@ export default function HeroPage() {
   return (
     <>
       <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap');
+
+        .f-syne  { font-family: 'Syne', sans-serif; }
+        .f-mono  { font-family: 'DM Mono', monospace; }
+        body { background: #06080f; font-family: 'DM Sans', sans-serif; }
+
         .grid-bg {
           background-image:
             linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
@@ -93,6 +100,11 @@ export default function HeroPage() {
       <main className="min-h-screen bg-[#06080f] grid-bg glow-hero overflow-hidden relative">
         {/* Ambient glow orb */}
         <div className="pointer-events-none absolute -top-32 right-1/4 w-[700px] h-[700px] rounded-full bg-amber-500/5 blur-[140px]" />
+
+        {/* Globe */}
+        <div className="pointer-events-none absolute top-0 right-0 translate-x-1/4 -translate-y-1/4 opacity-55 hidden lg:block">
+          <Globe />
+        </div>
 
         {/* ── HERO CONTENT ─────────────────────────────────────── */}
         <div className="relative z-10 container mx-auto px-6 lg:px-16 flex flex-col justify-center min-h-screen pt-10 pb-28">
@@ -161,7 +173,7 @@ export default function HeroPage() {
         <div className="hidden xl:flex absolute right-14 top-1/2 -translate-y-1/2 flex-col gap-2.5">
           {techStack.map((t, i) => (
             <div key={t.label}
-              className={`fade-up f-mono text-xs px-4 py-2 rounded-full border ${t.color} select-none whitespace-nowrap`}
+              className={`fade-up f-mono text-xs px-4 py-2 rounded-[20px] border ${t.color} select-none whitespace-nowrap`}
               style={{ animationDelay: `${480 + i * 70}ms` }}>
               {t.label}
             </div>

@@ -4,12 +4,16 @@
 :root {
   --bg: #06080f;
   --surface: #0c1018;
-  --surface-alt: #08090f;
   --border: #151c28;
+  --border2: #1e2a38;
   --amber: #f59e0b;
   --amber-dim: #78490a;
-  --text: #f0f4f8;
-  --muted: #64748b;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --dim: #475569;
+  --faint: #64748b;
+  --mono: #334155;
+  --surface-alt: #08090f;
 
   --background: var(--bg);
   --foreground: var(--text);

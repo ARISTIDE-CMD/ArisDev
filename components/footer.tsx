@@ -4,6 +4,7 @@ import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 const quickLinks = [
   { href: "/", label: "Accueil" },
   { href: "/about", label: "Parcours" },
+  // { href: "/services", label: "Services" },
   { href: "/competences", label: "Compétences" },
   { href: "/myProjets", label: "Projets" },
   { href: "/contact", label: "Contact" },
@@ -75,14 +76,14 @@ export default function Footer() {
               <MapPin size={16} className="text-amber-400" />
               Douala, Cameroun
             </div>
-            <a
+            {/* <a
               href="/file/CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-xl border border-[#1e2a38] bg-[#0c1018] px-4 py-2 text-slate-300 hover:text-amber-400 hover:border-amber-400/30 transition-colors"
             >
               Télécharger mon CV
-            </a>
+            </a> */}
           </div>
         </section>
       </div>
@@ -96,4 +97,3 @@ export default function Footer() {
     </footer>
   );
 }
-

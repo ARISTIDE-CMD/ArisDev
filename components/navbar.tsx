@@ -12,7 +12,7 @@ type NavLink = {
 
 const links: NavLink[] = [
   { href: "/", label: "Accueil" },
-  { href: "/about", label: "Parcours" },
+  // { href: "/services", label: "Services" },
   { href: "/competences", label: "Compétences" },
   { href: "/myProjets", label: "Projets" },
   { href: "/contact", label: "Contact" },
@@ -34,7 +34,7 @@ function Navbar() {
             AK
           </div>
           <div className="leading-tight">
-            <div className="text-slate-50 font-semibold">Aristide Kenfack</div>
+            <div className="text-slate-50 font-semibold f-syne">Aristide Kenfack</div>
             <div className="text-xs text-slate-500">Full Stack · DevOps</div>
           </div>
         </Link>
@@ -60,7 +60,7 @@ function Navbar() {
           </ul>
 
           <a
-            href="/file/CV.pdf"
+            href="/file/CV_Aristide gael_kouandja kenfack.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 px-4 py-2 text-sm font-semibold transition-colors"
@@ -106,7 +106,7 @@ function Navbar() {
           })}
 
           <a
-            href="/file/CV.pdf"
+            href="/file/CV_Aristide gael_kouandja kenfack.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 px-4 py-2 text-sm font-semibold transition-colors"

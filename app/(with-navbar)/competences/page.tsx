@@ -1,3 +1,5 @@
+"use client";
+
 import CompetencesPage from "@/components/refonte/page3";
 
 export default function Page() {
