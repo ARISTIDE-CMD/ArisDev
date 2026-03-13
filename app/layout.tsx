@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import PageTransition from "@/components/PageTransition";
+import ScrollToTop from "@/components/refonte/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Aristide Kenfack | Portfolio",
@@ -35,6 +36,7 @@ export default function RootLayout({
             <PageTransition>{children}</PageTransition>
           </main>
           <Footer />
+          <ScrollToTop />
         </div>
       </body>
     </html>
