@@ -20,14 +20,21 @@ export default function Globe({ className }: GlobeProps) {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     const getSize = () => {
-      const { width, height } = canvas.getBoundingClientRect();
+      const width = canvas.clientWidth;
+      const height = canvas.clientHeight;
       return {
         width: Math.max(1, Math.round(width * dpr)),
         height: Math.max(1, Math.round(height * dpr)),
       };
     };
 
+    const applyCanvasSize = (w: number, h: number) => {
+      if (canvas.width !== w) canvas.width = w;
+      if (canvas.height !== h) canvas.height = h;
+    };
+
     let { width, height } = getSize();
+    applyCanvasSize(width, height);
 
     const init = () => {
       globe = createGlobe(canvas, {
@@ -48,6 +55,7 @@ export default function Globe({ className }: GlobeProps) {
           { location: [48.8566, 2.3522], size: 0.05 }, // Paris
         ],
         onRender: (state) => {
+          // Keep COBE uniforms in sync with the current canvas size.
           state.width = width;
           state.height = height;
           state.phi = phi;
@@ -63,6 +71,7 @@ export default function Globe({ className }: GlobeProps) {
       const size = getSize();
       width = size.width;
       height = size.height;
+      applyCanvasSize(width, height);
 
       if (!globe && width > 1 && height > 1) init();
       globe?.resize();

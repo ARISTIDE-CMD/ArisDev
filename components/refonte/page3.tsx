@@ -310,31 +310,32 @@ export default function CompetencesPage() {
                         key={sk.name}
                         delay={idx * 0.03}
                         y={14}
-                        className="bg-[#0a1020] border border-[#1e2a38] rounded-[14px] p-4 hover:border-amber-400/30 transition-colors duration-300 card-hover"
                       >
-                        <div className="flex items-start justify-between gap-3">
-                          <div className="min-w-0">
-                            <SkillIcons name={sk.name} />
-                            <div className="mt-3">
-                              <p className="text-slate-200 text-sm font-semibold leading-snug">{sk.name}</p>
-                              {skillDescriptions[sk.name] ? (
-                                <p className="text-slate-500 text-xs leading-relaxed mt-1">
-                                  {skillDescriptions[sk.name]}
-                                </p>
-                              ) : null}
-                              <p className="f-mono text-[10px] text-slate-600 mt-2">{sk.level}%</p>
+                        <div className="bg-[#0a1020] border border-[#1e2a38] rounded-[14px] p-4 hover:border-amber-400/30 transition-colors duration-300 card-hover">
+                          <div className="flex items-start justify-between gap-3">
+                            <div className="min-w-0">
+                              <SkillIcons name={sk.name} />
+                              <div className="mt-3">
+                                <p className="text-slate-200 text-sm font-semibold leading-snug">{sk.name}</p>
+                                {skillDescriptions[sk.name] ? (
+                                  <p className="text-slate-500 text-xs leading-relaxed mt-1">
+                                    {skillDescriptions[sk.name]}
+                                  </p>
+                                ) : null}
+                                <p className="f-mono text-[10px] text-slate-600 mt-2">{sk.level}%</p>
+                              </div>
                             </div>
+                            <span className={`f-mono text-[10px] px-2 py-0.5 rounded-full border ${tagColor[sk.tag]}`}>
+                              {sk.tag}
+                            </span>
                           </div>
-                          <span className={`f-mono text-[10px] px-2 py-0.5 rounded-full border ${tagColor[sk.tag]}`}>
-                            {sk.tag}
-                          </span>
-                        </div>
 
-                        <div className="mt-3 h-1.5 bg-[#151c28] rounded-full overflow-hidden">
-                          <div
-                            className={`h-full rounded-full bar-animate ${barColor[sk.tag]}`}
-                            style={{ width: `${sk.level}%` }}
-                          />
+                          <div className="mt-3 h-1.5 bg-[#151c28] rounded-full overflow-hidden">
+                            <div
+                              className={`h-full rounded-full bar-animate ${barColor[sk.tag]}`}
+                              style={{ width: `${sk.level}%` }}
+                            />
+                          </div>
                         </div>
                       </Reveal>
                     ))}
@@ -344,42 +345,6 @@ export default function CompetencesPage() {
             </div>
             </section>
           </Reveal>
-
-          {/* ── SKILL CATEGORIES ────────────────────────── */}
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
-            {categories.map((cat) => {
-              const Icon = cat.icon;
-              return (
-                <div key={cat.title} className="bg-[#0c1018] border border-[#151c28] rounded-2xl p-7 hover:border-amber-400/20 transition-colors duration-300">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-9 h-9 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center">
-                      <Icon size={17} className="text-amber-400" />
-                    </div>
-                    <h2 className="f-syne font-bold text-slate-100 text-base">{cat.title}</h2>
-                  </div>
-
-                  <ul className="space-y-4">
-                    {cat.skills.map((sk) => (
-                      <li key={sk.name}>
-                        <div className="flex items-center justify-between mb-1.5">
-                          <span className="text-slate-300 text-sm font-medium">{sk.name}</span>
-                          <span className={`f-mono text-[10px] px-2 py-0.5 rounded-full border ${tagColor[sk.tag]}`}>
-                            {sk.tag}
-                          </span>
-                        </div>
-                        <div className="h-1.5 bg-[#151c28] rounded-full overflow-hidden">
-                          <div
-                            className={`h-full rounded-full bar-animate ${barColor[sk.tag]}`}
-                            style={{ width: `${sk.level}%` }}
-                          />
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
-          </div> */}
 
           {/* ── SOFT SKILLS / METHODOLOGIES ─────────────── */}
           <Reveal y={18} delay={0.05}>

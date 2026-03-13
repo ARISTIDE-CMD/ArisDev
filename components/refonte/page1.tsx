@@ -5,6 +5,18 @@ import { useEffect, useState } from "react";
 import { ArrowRight, Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 import Globe from "@/components/Globe";
 
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiLaravel,
+  SiPhp,
+  SiDocker,
+  SiGitlab,
+  SiSpringboot,
+  SiNodedotjs,
+} from "react-icons/si";
+
 const roles = [
   "Développeur Full Stack",
   "Ingénieur DevOps",
@@ -13,13 +25,58 @@ const roles = [
 ];
 
 const techStack = [
-  { label: "React / Next.js", color: "text-[#38bdf8] border-[#0c2d3e] bg-[#061624]" },
-  { label: "React Native", color: "text-[#a78bfa] border-[#2d1b4e] bg-[#120a22]" },
-  { label: "Laravel / PHP", color: "text-[#f87171] border-[#3d1515] bg-[#180808]" },
-  { label: "TypeScript", color: "text-[#60a5fa] border-[#1a2f4e] bg-[#06101e]" },
-  { label: "Docker · CI/CD", color: "text-[#2dd4bf] border-[#0d3530] bg-[#041814]" },
-  { label: "Spring Boot", color: "text-[#86efac] border-[#0d3018] bg-[#04180a]" },
-  { label: "Node.js", color: "text-[#64748b] border-[#1e2a38] bg-[#0a1020]" },
+  {
+    label: "React / Next.js",
+    icons: [
+      { el: <SiReact size={14} />, color: "#61DAFB" },
+      { el: <SiNextdotjs size={14} />, color: "#ffffff" },
+    ],
+    pill: { text: "#e2e8f0", border: "#1e3a4a", bg: "#040f18" },
+  },
+  {
+    label: "React Native",
+    icons: [
+      { el: <SiReact size={14} />, color: "#a78bfa" },
+    ],
+    pill: { text: "#ddd6fe", border: "#2d1b4e", bg: "#0d0618" },
+  },
+  {
+    label: "Laravel / PHP",
+    icons: [
+      { el: <SiLaravel size={14} />, color: "#FF2D20" },
+      { el: <SiPhp size={14} />, color: "#a78bfa" },
+    ],
+    pill: { text: "#fca5a5", border: "#3d1515", bg: "#130505" },
+  },
+  {
+    label: "TypeScript",
+    icons: [
+      { el: <SiTypescript size={14} />, color: "#3178C6" },
+    ],
+    pill: { text: "#93c5fd", border: "#1a2f4e", bg: "#040d1a" },
+  },
+  {
+    label: "Docker · CI/CD",
+    icons: [
+      { el: <SiDocker size={14} />, color: "#2496ED" },
+      { el: <SiGitlab size={14} />, color: "#FC6D26" },
+    ],
+    pill: { text: "#99f6e4", border: "#0d3530", bg: "#021410" },
+  },
+  {
+    label: "Spring Boot",
+    icons: [
+      { el: <SiSpringboot size={14} />, color: "#6DB33F" },
+    ],
+    pill: { text: "#bbf7d0", border: "#0d3018", bg: "#030e06" },
+  },
+  {
+    label: "Node.js",
+    icons: [
+      { el: <SiNodedotjs size={14} />, color: "#5FA04E" },
+    ],
+    pill: { text: "#86efac", border: "#1a3020", bg: "#040d07" },
+  },
 ];
 
 const stats = [
@@ -57,52 +114,60 @@ export default function HeroPage() {
   return (
     <>
       <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap');
-
-        .f-syne  { font-family: 'Syne', sans-serif; }
-        .f-mono  { font-family: 'DM Mono', monospace; }
-        body { background: #06080f; font-family: 'DM Sans', sans-serif; }
+        .f-syne { font-family: 'Syne', sans-serif; }
+        .f-mono { font-family: 'DM Mono', monospace; }
 
         .grid-bg {
           background-image:
-            linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+            linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
           background-size: 64px 64px;
         }
 
         .glow-hero {
-          background: radial-gradient(ellipse 70% 40% at 60% 0%, rgba(245,158,11,.10), transparent 70%);
+          background: radial-gradient(
+            ellipse 70% 40% at 60% 0%,
+            rgba(245,158,11,.09),
+            transparent 70%
+          );
         }
 
         @keyframes fadeUp {
-          from { opacity:0; transform:translateY(22px); }
-          to   { opacity:1; transform:translateY(0);    }
+          from { opacity: 0; transform: translateY(22px); }
+          to   { opacity: 1; transform: translateY(0);    }
         }
-
         .fade-up {
           opacity: 0;
           animation: fadeUp .75s cubic-bezier(.22,1,.36,1) forwards;
         }
 
         @keyframes cursor-blink {
-          0%,100% { opacity:1; }
-          50%      { opacity:0; }
+          0%, 100% { opacity: 1; }
+          50%       { opacity: 0; }
         }
-
         .typed-cursor::after {
           content: '|';
-          color: var(--amber);
+          color: #f59e0b;
           animation: cursor-blink 1s step-end infinite;
           margin-left: 2px;
+        }
+
+        .tech-pill {
+          transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .tech-pill:hover {
+          transform: translateX(-5px);
+          box-shadow: 6px 0 20px rgba(0, 0, 0, .5);
         }
       `}</style>
 
       <main className="min-h-screen bg-transparent grid-bg glow-hero overflow-hidden relative">
-        {/* Ambient glow orb */}
+
+        {/* Ambient orb */}
         <div className="pointer-events-none absolute -top-32 right-1/4 w-[700px] h-[700px] rounded-full bg-amber-500/5 blur-[140px]" />
 
         {/* Globe */}
-        <div className="pointer-events-none absolute -top-40 -right-40 opacity-60 z-0">
+        <div className="pointer-events-none absolute -top-28 -right-28 opacity-75 z-[1]">
           <div className="w-[420px] h-[420px] sm:w-[560px] sm:h-[560px] lg:w-[840px] lg:h-[840px] xl:w-[1050px] xl:h-[1050px]">
             <Globe />
           </div>
@@ -112,34 +177,54 @@ export default function HeroPage() {
         <div className="relative z-10 container mx-auto px-6 lg:px-16 flex flex-col justify-center min-h-screen pt-10 pb-28">
 
           {/* Tag */}
-          <div className="fade-up f-mono text-amber-400 text-xs tracking-[.18em] uppercase mb-8 flex items-center gap-3" style={{ animationDelay: "0ms" }}>
+          <div
+            className="fade-up f-mono text-amber-400 text-xs tracking-[.18em] uppercase mb-8 flex items-center gap-3"
+            style={{ animationDelay: "0ms" }}
+          >
             <span className="w-7 h-px bg-amber-400 inline-block" />
             Ouvert aux opportunités · Douala, Cameroun
           </div>
 
           {/* Name */}
-          <h1 className="fade-up f-syne font-extrabold text-[clamp(2.8rem,8vw,6.5rem)] leading-[.92] text-slate-50 mb-4" style={{ animationDelay: "80ms" }}>
+          <h1
+            className="fade-up f-syne font-extrabold text-[clamp(2.8rem,8vw,6.5rem)] leading-[.92] text-slate-50 mb-4"
+            style={{ animationDelay: "80ms" }}
+          >
             Aristide
             <br />
             <span className="text-amber-400">Kenfack</span>
           </h1>
 
-          {/* Typewriter role */}
-          <p className="fade-up f-syne text-xl md:text-2xl text-slate-400 font-medium h-9 mb-6 typed-cursor" style={{ animationDelay: "160ms" }}>
+          {/* Typewriter */}
+          <p
+            className="fade-up f-syne text-xl md:text-2xl text-slate-400 font-medium h-9 mb-6 typed-cursor"
+            style={{ animationDelay: "160ms" }}
+          >
             {displayed}
           </p>
 
           {/* Description */}
-          <p className="fade-up text-slate-400 text-base md:text-lg leading-relaxed max-w-xl mb-10" style={{ animationDelay: "240ms" }}>
-            19 ans. Je conçois des applications web et mobiles performantes, avec une 
+          <p
+            className="fade-up text-slate-400 text-base md:text-lg leading-relaxed max-w-xl mb-10"
+            style={{ animationDelay: "240ms" }}
+          >
+            19 ans. Je conçois des applications web et mobiles performantes, avec une
             rigueur DevOps — pipelines CI/CD, Docker, monitoring. Actuellement{" "}
-            <span className="text-slate-200 font-medium">Frontend Dev & DevOps chez Iziway Cameroun</span>{" "}
+            <span className="text-slate-200 font-medium">
+              Frontend Dev & DevOps chez Iziway Cameroun
+            </span>{" "}
             et étudiant en Licence Technologique à l&apos;IUT Douala.
           </p>
 
           {/* CTAs */}
-          <div className="fade-up flex flex-wrap gap-4 mb-14" style={{ animationDelay: "320ms" }}>
-            <Link href="/myProjets" className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold px-7 py-3.5 rounded-xl transition-all duration-300 group hover:gap-3 f-syne">
+          <div
+            className="fade-up flex flex-wrap gap-4 mb-14"
+            style={{ animationDelay: "320ms" }}
+          >
+            <Link
+              href="/myProjets"
+              className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold px-7 py-3.5 rounded-xl transition-all duration-300 group hover:gap-3 f-syne"
+            >
               Voir mes projets
               <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
@@ -153,17 +238,26 @@ export default function HeroPage() {
             </a>
           </div>
 
-          {/* Social */}
-          <div className="fade-up flex items-center gap-6" style={{ animationDelay: "400ms" }}>
+          {/* Socials */}
+          <div
+            className="fade-up flex items-center gap-6"
+            style={{ animationDelay: "400ms" }}
+          >
             <span className="text-[#334155] text-xs tracking-widest uppercase f-mono">Profils</span>
             <div className="flex gap-3">
               {[
-                { icon: Github,   href: "https://github.com/ARISTIDE-CMD",                                           label: "GitHub"   },
-                { icon: Linkedin, href: "https://www.linkedin.com/in/aristide-gael-kouandja-kenfack-571693287/",     label: "LinkedIn" },
-                { icon: Mail,     href: "mailto:aristidegaelkouandjakenfack@gmail.com",                               label: "Email"    },
+                { icon: Github, href: "https://github.com/ARISTIDE-CMD", label: "GitHub" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/aristide-gael-kouandja-kenfack-571693287/", label: "LinkedIn" },
+                { icon: Mail, href: "mailto:aristidegaelkouandjakenfack@gmail.com", label: "Email" },
               ].map(({ icon: Icon, href, label }) => (
-                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
-                  className="w-10 h-10 rounded-xl border border-[#151c28] hover:border-amber-400/30 flex items-center justify-center text-slate-600 hover:text-amber-400 transition-all duration-300 hover:bg-amber-400/5">
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="w-10 h-10 rounded-xl border border-[#151c28] hover:border-amber-400/30 flex items-center justify-center text-slate-600 hover:text-amber-400 transition-all duration-300 hover:bg-amber-400/5"
+                >
                   <Icon size={17} />
                 </a>
               ))}
@@ -171,12 +265,57 @@ export default function HeroPage() {
           </div>
         </div>
 
-        {/* ── FLOATING TECH PILLS ───────────────────────────────── */}
-        <div className="hidden xl:flex absolute right-14 top-1/2 -translate-y-1/2 flex-col gap-2.5">
+        {/* ── TECH PILLS ───────────────────────────────────────── */}
+        <div className="hidden xl:flex absolute right-10 top-1/2 -translate-y-1/2 flex-col gap-2 z-10">
           {techStack.map((t, i) => (
-            <div key={t.label}
-              className={`fade-up f-mono text-xs px-4 py-2 rounded-[20px] border ${t.color} select-none whitespace-nowrap`}
-              style={{ animationDelay: `${480 + i * 70}ms` }}>
+            <div
+              key={t.label}
+              className="tech-pill fade-up f-mono select-none whitespace-nowrap cursor-default"
+              style={{
+                animationDelay: `${480 + i * 70}ms`,
+                color: t.pill.text,
+                border: `1px solid ${t.pill.border}`,
+                background: t.pill.bg,
+                padding: "9px 16px",
+                borderRadius: "24px",
+                display: "flex",
+                alignItems: "center",
+                gap: "9px",
+                fontSize: "12px",
+                fontWeight: 500,
+                letterSpacing: ".02em",
+              }}
+            >
+              {/* Icônes avec leurs vraies couleurs */}
+              <span style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+                {t.icons.map((ic, j) => (
+                  <span
+                    key={j}
+                    style={{
+                      color: ic.color,
+                      display: "flex",
+                      alignItems: "center",
+                      lineHeight: 1,
+                      filter: "drop-shadow(0 0 4px " + ic.color + "55)",
+                    }}
+                  >
+                    {ic.el}
+                  </span>
+                ))}
+              </span>
+
+              {/* Séparateur vertical */}
+              <span
+                style={{
+                  width: "1px",
+                  height: "13px",
+                  background: t.pill.border,
+                  flexShrink: 0,
+                  opacity: 0.8,
+                }}
+              />
+
+              {/* Label */}
               {t.label}
             </div>
           ))}
