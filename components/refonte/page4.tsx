@@ -80,6 +80,7 @@ const projects: Project[] = [
     impact: "Offline-first + synchronisation Supabase (PostgreSQL)",
     impactColor: "sky",
     tags: ["React Native", "Supabase", "PostgreSQL", "Google OAuth", "OpenAI API", "Offline-first"],
+    demo: "https://drive.google.com/file/d/1gk4-_YZlqUVf_nJIqETtPdKfC_-5duRU/view?usp=drive_link",
   },
   {
     title: "Plateforme de Vote en Ligne",
