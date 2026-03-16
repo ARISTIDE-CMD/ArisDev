@@ -74,6 +74,14 @@ const projects: Project[] = [
     liveUrl: "https://floranature.vercel.app",
   },
   {
+    title: "StudyDay — App mobile étudiante",
+    description:
+      "Application mobile de productivité : génération d'emploi du temps, prise de notes, gestion de ressources (fichiers/liens/texte), tâches avec rappels, et synchronisation local → cloud.",
+    impact: "Offline-first + synchronisation Supabase (PostgreSQL)",
+    impactColor: "sky",
+    tags: ["React Native", "Supabase", "PostgreSQL", "Google OAuth", "OpenAI API", "Offline-first"],
+  },
+  {
     title: "Plateforme de Vote en Ligne",
     description:
       "Application web sécurisée pour le vote électronique. Gestion complète du processus électoral.",
@@ -108,6 +116,11 @@ const pillStyles: Record<string, { text: string; border: string; bg: string }> =
   "Monitoring": { text: "#64748b", bg: "#0a1020", border: "#1e2a38" },
   "Typesense": { text: "#f59e0b", bg: "rgba(245,158,11,.06)", border: "rgba(245,158,11,.2)" },
   "Vercel": { text: "#f1f5f9", bg: "#06090f", border: "#0f1825" },
+  "Supabase": { text: "#3ECF8E", bg: "#04150c", border: "#0d3018" },
+  "PostgreSQL": { text: "#4169E1", bg: "#040a18", border: "#0d1b36" },
+  "Google OAuth": { text: "#4285F4", bg: "#040d18", border: "#0d2236" },
+  "OpenAI API": { text: "#f1f5f9", bg: "#06090f", border: "#0f1825" },
+  "Offline-first": { text: "#f59e0b", bg: "rgba(245,158,11,.06)", border: "rgba(245,158,11,.2)" },
   "MySQL": { text: "#4479A1", bg: "#040d18", border: "#0d2236" },
   "API REST": { text: "#64748b", bg: "#0a1020", border: "#1e2a38" },
   "JWT": { text: "#f472b6", bg: "#130618", border: "#3d1535" },
