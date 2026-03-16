@@ -64,6 +64,16 @@ const projects: Project[] = [
     liveCredentials: { email: "admin@moligeerp.com", password: "Admin@123" },
   },
   {
+    title: "FloraNature — Site e-commerce",
+    description:
+      "Développement d'un site web e-commerce pour une naturopathe : catalogue produits, navigation claire, responsive et optimisé pour présenter les services.",
+    impact: "E-commerce en production sur Vercel",
+    impactColor: "sky",
+    tags: ["React / Next.js", "TypeScript", "Tailwind CSS", "E-commerce", "Vercel"],
+    live: true,
+    liveUrl: "https://floranature.vercel.app",
+  },
+  {
     title: "Plateforme de Vote en Ligne",
     description:
       "Application web sécurisée pour le vote électronique. Gestion complète du processus électoral.",
@@ -91,11 +101,13 @@ const pillStyles: Record<string, { text: string; border: string; bg: string }> =
   "Laravel": { text: "#f87171", bg: "#130505", border: "#3d1515" },
   "PHP": { text: "#a78bfa", bg: "#0d0618", border: "#2d1b4e" },
   "TypeScript": { text: "#3178C6", bg: "#040d1a", border: "#1a2f4e" },
+  "Tailwind CSS": { text: "#06B6D4", bg: "#02161a", border: "#063944" },
   "JavaScript": { text: "#F7DF1E", bg: "#0d0b00", border: "#2e2800" },
   "Docker": { text: "#2496ED", bg: "#021410", border: "#0d3530" },
   "GitLab CI": { text: "#FC6D26", bg: "#140800", border: "#3d2208" },
   "Monitoring": { text: "#64748b", bg: "#0a1020", border: "#1e2a38" },
   "Typesense": { text: "#f59e0b", bg: "rgba(245,158,11,.06)", border: "rgba(245,158,11,.2)" },
+  "Vercel": { text: "#f1f5f9", bg: "#06090f", border: "#0f1825" },
   "MySQL": { text: "#4479A1", bg: "#040d18", border: "#0d2236" },
   "API REST": { text: "#64748b", bg: "#0a1020", border: "#1e2a38" },
   "JWT": { text: "#f472b6", bg: "#130618", border: "#3d1535" },
