@@ -22,6 +22,17 @@ interface Project {
 /* ─── Data ──────────────────────────────────────────────── */
 const projects: Project[] = [
   {
+    title: "Le Cadran : E-commerce & Bijouterie Premium",
+    description:
+      "Architecture 'Composable Commerce' pour une expérience de luxe. Intègre un écosystème cloud complet : Auth Google, base de données Supabase & Prisma, paiements internationaux (Stripe) et locaux (Mobile Money), recherche ultra-rapide (Typesense), emails transactionnels (Resend), et support temps réel (Stream Chat + Firebase Push).",
+    impact: "Architecture Micro-services & Expérience Client Premium",
+    impactColor: "emerald",
+    tags: ["Next.js", "Typesense", "Stream Chat", "Firebase", "Stripe", "Supabase", "Prisma", "Notchpay", "Resend", "Render"],
+    live: true,
+    liveUrl: "https://le-cadran.vercel.app/",
+    featured: true,
+  },
+  {
     title: "Application de Livraison Full Stack",
     description:
       "Plateforme complète de livraison avec suivi en temps réel. Mobile React Native côté client & livreur, API Laravel sécurisée en backend, gestion centralisée des commandes et restaurants.",
@@ -130,6 +141,13 @@ const pillStyles: Record<string, { text: string; border: string; bg: string }> =
   "UI/UX": { text: "#818cf8", bg: "#08061a", border: "#1e1a4e" },
   "Figma": { text: "#F24E1E", bg: "#130400", border: "#3d1505" },
   "Backend Custom": { text: "#64748b", bg: "#0a1020", border: "#1e2a38" },
+  "Stream Chat": { text: "#005FFF", bg: "#020a1c", border: "#0b2046" },
+  "Firebase": { text: "#FFCA28", bg: "#1a1302", border: "#3d2e08" },
+  "Stripe": { text: "#635BFF", bg: "#0a091a", border: "#1a1845" },
+  "Prisma": { text: "#5A67D8", bg: "#080b1a", border: "#19204a" },
+  "Notchpay": { text: "#00E08F", bg: "#001a11", border: "#003322" },
+  "Resend": { text: "#ffffff", bg: "#0a0a0a", border: "#222222" },
+  "Render": { text: "#46e3b7", bg: "#041411", border: "#0a2923" },
 };
 
 function Tag({ label }: { label: string }) {
